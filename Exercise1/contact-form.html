@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contact Form</title>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <meta charset='utf-8'>
+        <meta name="description" content="Eshop for tech">
+        <meta name="keywords" content="smartphones, tech, eshop, orders, prices, reviews, product code">
+        <meta name="author" content="Peter Petovits, Alkiviadis Pouros">
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+    </head>
+
+    <body>
+        <header class="top-header">
+            <h1>The Easy Tech Eshop</h1>
+            <img class="logo" src="../assets/website-logo.png" alt="main website logo" height="100" width="100">
+            <!--navigation menu-->
+            <nav id="navigation-bar">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="./product-categories.html">Products</a></li>
+                    <li><a href="./contact-form.html">Contact Form</a></li>
+                    <li><a href="./about-us.html">About Us</a></li>
+                </ul>
+            </nav>
+
+        </header>
+        </header>
+        <main>
+            <h2>Tech Support</h2>
+            <fieldset>
+                <legend>Contact Form</legend>
+                <label for="comment_author" class="required">Your First Name</label>
+                <input type="text" name="comment_author" id="comment_author" value="" tabindex="1" required="requied"
+                    placeholder="ie. John"
+                    pattern="{A-Z}{1} {a-z}"
+                    title="first latter Capital the rest small without space ie. John"
+                >
+                <label for="comment_author" class="required">Your Last Name</label>
+                <input type="text" name="comment_author" id="comment_author" value="" tabindex="1" required="requied"
+                    placeholder="ie. Andrews"
+                    pattern="{A-Z}{1} {a-z}"
+                    title="first latter Capital the rest small without space ie. John"
+                >
+                <label for="product-code" class="required">Product Code</label>
+                <input type="number" name="product-code" id="product-code"
+                    required="requied"
+                    placeholder="ie. 785432"
+                    pattern="{1-9}{1} {0-9}{5}"
+                    min="100000" max="999999"
+                >
+                <label for="date_config" class="required">Date of purchase</label>
+                <input type="date" name="date_config" id="date_config" required="requied">
+                <label for="upload receipt" class="required">Select file</label>
+                <input type="file" name="upload receipt" id="upload receipt" required="requied">
+                <label for="comment" class="required">Your message</label>
+                <textarea name="comment" id="comment" rows="10" tabindex="4"  required="required"></textarea>
+
+            </fieldset>
+            <input type="submit" id="btn_submit" name="submit">
+        </main>
+        <footer class="page-footer">
+            <ul>
+                <li><a href="./contact-form.html">Contact Form</a></li>
+                <li><a href="./about-us.html">About Us</a></li>
+            </ul>
+            <p>Copyrights 2022-2023</p>
+        </footer>
+    </body>
+</html>
