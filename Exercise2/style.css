@@ -1,0 +1,80 @@
+body{
+    background: #f1f1f1;
+    color: #000;                /* body background color*/
+    /*-webkit-text-size-adjust: 100%; later...*/
+
+}
+
+.top-header{      
+    background-image: url(/assets/background_image_4.jpg);      /* top-header with background image*/
+    text-align: center;
+}
+
+#navigation-bar a,#navigation-categories-bar a{   
+    max-width: 100%;
+    border-radius: 17px;
+    margin-top: 8px;
+    padding-left: 8px;      /* are all these for now? i think not */
+    padding-right: 8px;
+    z-index: 1;
+    text-decoration: none;
+    
+}
+
+
+.top-header > h1{
+    color:rgb(2, 2, 2);
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 5px red; /* it will get fixed if needed*/
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+ul, ul > li{
+    list-style-position: inside;
+    list-style-type: none;
+    margin: 0;      /*remove defaults from browser change it later*/
+    padding: 0;
+}
+a:link{
+    color:white;
+}
+a:visited{
+    color:crimson; 
+}
+a:hover{
+    background-color: rgb(0, 68, 255);
+}
+a:active{
+    background-color: #f1f1f1;
+}
+.logo{
+    border: 3px solid black
+}
+
+#main-content{
+    text-align: center;
+}
+#navigation-categories-bar{
+
+    background-color: rgb(185, 180, 180);
+    border-style:hidden;
+    /*
+    margin-left: 40%;
+    margin-right: 40%;
+    display:inline-block;
+    position:relative;
+    line-height: 15px;  ideas for later...
+    width: 213px;
+    border-radius: 5px;
+    padding: 0 16px 20px;
+    overflow: hidden;
+    */
+}
+.page-footer{
+    background-color:rgb(54, 47, 47);
+    color:#f1f1f1;
+    border-style:inset;    /*should add margin and padding? */
+}
+.page-footer img{
+    display:flex;
+}
