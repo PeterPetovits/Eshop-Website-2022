@@ -21,11 +21,22 @@ body{
     
 }
 
-
 .top-header > h1{
     color:rgb(2, 2, 2);
     letter-spacing: 4px;
     text-shadow: 2px 2px 5px red; /* it will get fixed if needed*/
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/*style for h2 in index-home page*/
+main > h2{
+    text-align: center;
+    font-size: 2em;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+main > p{
+    font-size: 1em;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -35,18 +46,23 @@ ul, ul > li{
     margin: 0;      /*remove defaults from browser change it later*/
     padding: 0;
 }
+
 a:link{
     color:white;
 }
+
 a:visited{
-    color:crimson; 
+    color:white; 
 }
+
 a:hover{
     background-color: rgb(0, 68, 255);
 }
+
 a:active{
     background-color: #f1f1f1;
 }
+
 .logo{
     border: 3px solid black
 }
@@ -54,6 +70,7 @@ a:active{
 #main-content{
     text-align: center;
 }
+
 #navigation-categories-bar{
 
     background-color: rgb(185, 180, 180);
@@ -70,11 +87,62 @@ a:active{
     overflow: hidden;
     */
 }
-.page-footer{
-    background-color:rgb(54, 47, 47);
-    color:#f1f1f1;
-    border-style:inset;    /*should add margin and padding? */
+
+#creators-bio > h2{
+    text-align: center;
+    font-size: 2em;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-.page-footer img{
-    display:flex;
+
+/*style to create column like look for the bios*/
+#developer{
+    float: left;
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+/* Clear floats after the columns */
+#developer::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#developer > img{
+    float: left;
+    margin-right: 10px;
+}
+
+/*style for footer*/
+.page-footer{
+    background-image: url(/assets/background_image_4.jpg);
+    padding-right: 0.625rem;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+    max-width: auto;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: center;
+    align-items: center;
+    clear: both;
+}
+
+/*style for images in footer in order to put them in a row*/
+.row-footer{
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: center;
+   list-style: none;
+   margin: 0;
+}
+/*color for paragraph in footer*/
+.page-footer > p{
+    color: white;
 }
