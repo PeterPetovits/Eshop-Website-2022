@@ -10,7 +10,7 @@ body{
     text-align: center;
 }
 
-#navigation-bar a,#navigation-categories-bar a{   
+a{   
     max-width: 100%;
     border-radius: 17px;
     margin-top: 8px;
