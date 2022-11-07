@@ -18,7 +18,6 @@ a{
     padding-right: 8px;
     z-index: 1;
     text-decoration: none;
-    
 }
 
 .top-header > h1{
@@ -88,6 +87,116 @@ a:active{
     */
 }
 
+.products-list{
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0.3125rem;
+}
+
+.products-list li{
+    margin: 0.3125rem;
+    padding: 0;
+    list-style: none;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.3125rem;
+}
+
+.products-list .product{
+    background-color: #f1f1f1;
+    padding: 1.25rem;
+    border-radius: 0.3125rem;
+    position: relative;
+}
+
+.products-list .product .product-item-inner-box{
+    height: 100%;
+    flex-direction: column;
+    display: flex;
+    overflow: visible;
+    position: relative;
+    justify-content: flex-end;
+}
+
+.products-list .product .product-item-inner-box .product-item-inner-box-top-part{
+    flex-grow: 1;
+}
+
+.products-list .product .product-item-image{
+    position: relative;
+}
+
+.products-list .product .product-item-image a{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0 auto 1.25rem;
+    width: 100%;
+    background-color: #f9f9f9;
+}
+
+.products-list .product .product-title{
+    text-align: left;
+    word-break: break-word;
+    margin-top: 0.9775rem;
+    max-height: 1.5rem;
+    overflow: hidden;
+}
+
+.products-list .product .product-title a{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+    font-size: 0.8125rem;
+    line-height: 0.8125rem;
+    color: #000;
+    font-weight: 400;
+    overflow: hidden;
+    background-color: #f9f9f9;
+}
+
+.products-list .product .product-item-inner-box .product-code-review-wrapper{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 0.75rem;
+}
+
+.products-list .product .product-item-inner-box .product-code-review-wrapper .product-review{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.product .product-review{
+    position: relative;
+    text-align: center;
+}
+
+.checked{
+    color: orange;
+}
+
+.products-list .product .product-code{
+    display: inline-block;
+    font-size: 0.75rem;
+    color: #8a8a8a;
+    margin-left: 10px;
+}
+
+.products-list .product .product-item-inner-box .product-price{
+    margin: 0.5625rem 0 0.6875rem;
+    background-color: #f1f1f1;
+    position: static;
+    width: 100%;
+    height: unset;
+}
+
 #creators-bio > h2{
     text-align: center;
     font-size: 2em;
@@ -145,4 +254,15 @@ a:active{
 /*color for paragraph in footer*/
 .page-footer > p{
     color: white;
+}
+/*style for links in footer area*/
+.page-footer a{
+    text-decoration: none;
+    border-radius: 17px;
+    max-width: 100%;
+}
+
+/*style for pictures in footer area*/
+.row-footer > li{
+    margin: 3px;
 }
