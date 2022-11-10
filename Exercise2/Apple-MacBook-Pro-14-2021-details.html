@@ -9,6 +9,13 @@
         <meta name="author" content="Peter Petovits, Alkiviadis Pouros">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel = "stylesheet" href = "style.css">
+        <style>
+            .body{
+                text-rendering: optimizeLegibility;
+                scroll-behavior: smooth;
+                font-feature-settings: 'lnum';
+            }
+        </style>
         
     </head>
     <body>
@@ -31,17 +38,38 @@
             <article id="product-info">
                 <h1>Apple MacBook Pro 14" Space Grey MKGP3GR/A Laptop</h1>
                 <section class="apple-macbook-pro-14-2021">
-                    <figure>
-                        <img class="product" src="../assets/apple_macbook_pro_14_m1_pro_8_core_16gb_512gb_macos_2021_space_gray.jpeg" alt="apple_macbook_pro_14_m1_pro_8_core_16gb_512gb_macos_2021_space_gray" height="300" width="300">
-                    </figure>
-                    <section class="code and price">
-                      <p class="code">Product Code: 785432</p>
+                    <ul>
+                        <li>
+                            <figure>
+                                <img class="product" src="../assets/apple_macbook_pro_14_m1_pro_8_core_16gb_512gb_macos_2021_space_gray.jpeg" alt="apple_macbook_pro_14_m1_pro_8_core_16gb_512gb_macos_2021_space_gray" height="300" width="300">
+                            </figure>
+                        </li> 
+                        <li>
+                            <figure>    
+                                <img class="product" src="../assets/apple-macbook-pro-14-2021-2.jpg" alt="display_image_1" height="200" width="200">
+                            </figure>
+                        </li>
+                        <li>
+                            <figure>
+                                <img class="product" src="../assets/apple-macbook-pro-14-2021-3.jpeg" alt="display_image_2" height="200" width="300">    
+                        
+                            </figure>
+                        </li>
+                        <li>
+                            <span id="Apple-product-presintation">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/9tobL8U7dQo" title="YouTube video player"></iframe>
+                            </span>
+                        </li> 
+                    </ul>
+
+                    <section class="code-and-price">
+                      <p class="code">Product code: 785432</p>
                       <p class="price">Price: 2.384,50 $</p>
                     </section>
                     
                     <section id="product-characteristics">
-                            <h2>Description</h2>
-                            <p>
+                            <h2 class="description">Description</h2>
+                            <p class="text">
                                 Apple M1 Pro or M1 Max processor,<br>
                                 up to 64GB of single memory,<br>
                                 dazzling 14-inch Liquid Retina XDR display,<br>
@@ -54,8 +82,8 @@
                         
                         
                       <section id="characteristics">
-                        <h2>Characteristics</h2>
-                          <dl>
+                        <h2 class = "specs">Characteristics</h2>
+                          <dl class="specifications">
                               <dt>Screen</dt>
                               <dd>14" Liquid Retina XDR 3024 x 1964</dd>
                               <dt>Processor</dt>
@@ -77,14 +105,15 @@
                               <dt>Keyboard Language</dt>
                               <dd>Greek</dd>
                           </dl>
-                      </section>      
+                      </section>
                         
                     
                     
                 </section>
                 
-                <section class="apple-macbook-pro-14-2021-analysis">
+             <section class="apple-macbook-pro-14-2021-analysis">
                     <h2>Analysis</h2>
+                <span id = "analysis">
                     <p>
                         With Apple's M1 chip designed for professionals, you get breakthrough performance and long battery life.<br>
                         Add to that a great Liquid Retina XDR display, the best camera and sound you've ever had on a Mac laptop,<br>
@@ -92,8 +121,10 @@
                         life is satisfactory.
                     </p>
                     <figure>
-                        <img class="product" src="../assets/analysis-macbook-pro-14-2021.jpeg" alt="analysis_image" height="1000" width="1500">
+                        <img id="product-analysis_1" src="../assets/analysis-macbook-pro-14-2021.jpeg" alt="analysis_image" height="1000" width="1500">
                     </figure>
+                </span>
+                <span id = "speed">
                     <h3>Incredibly fast</h3>
                     <p>
                         The M1 Pro takes the outstanding performance of the M1 architecture<br>
@@ -103,8 +134,10 @@
                         media engine encoders and decoders that support H.264, HEVC, and ProRes codecs.
                     </p>
                     <figure>
-                        <img class="product" src="../assets/analysis-macbook-apple-pro-14-2021-2.jpeg" alt="analysis_image-1" height="250" width="400">
+                        <img id="product-analysis_2" src="../assets/analysis-macbook-apple-pro-14-2021-2.jpeg" alt="analysis_image-1" height="250" width="400">
                     </figure>
+                </span>
+                <span id = "screen">
                     <h3>Unsurpassed screen</h3>
                     <p>
                         Liquid Retina XDR is the best display a laptop has ever had. It has Extreme Dynamic Range and a million-to-one contrast ratio.<br>
@@ -113,8 +146,10 @@
                         design and print production.
                     </p>
                     <figure>
-                        <img class="product" src="../assets/analysis-macbook-apple-pro-14-2021-3.jpeg" alt="analysis_image-2" height="350" width="450">
+                        <img id="product-analysis_3" src="../assets/analysis-macbook-apple-pro-14-2021-3.jpeg" alt="analysis_image-2" height="350" width="450">
                     </figure>
+                </span>
+                <span id = "camera">
                     <h3>Perfect camera performance</h3>
                     <p>
                         Staying in touch is more important than ever.<br>
@@ -124,8 +159,10 @@
                         the camera offers twice the performance in low-light conditions.
                     </p>
                     <figure>
-                        <img class="product" src="../assets/analysis-macbook-apple-pro-14-2021-4.jpeg" alt="analysis_image-3" height="350" width="480">
+                        <img id="product-analysis_4" src="../assets/analysis-macbook-apple-pro-14-2021-4.jpeg" alt="analysis_image-3" height="350" width="480">
                     </figure>
+                </span>
+                <span id = "sound">
                     <h3>3D sound</h3>
                     <p>
                         Thanks to its six-speaker system and advanced algorithms,<br>
@@ -134,8 +171,10 @@
                         Combine that with the Liquid Retina XDR display and it's like having a home cinema.
                     </p>
                     <figure>
-                        <img class="product" src="../assets/analysis-macbook-pro-14-2021-5.jpeg" alt="analysis_image-4" height="350" width="450">
+                        <img id="product-analysis_5" src="../assets/analysis-macbook-pro-14-2021-5.jpeg" alt="analysis_image-4" height="350" width="450">
                     </figure>
+                </span>
+                  <span>  
                     <h3>Greater connectivity than ever before</h3>
                     <p>
                         Transfer photos and videos with an SDXC card reader. Connect to TVs or monitors with HDMI output.<br>
@@ -144,35 +183,21 @@
                         Fast charging using the MagSafe 3 quick-release port.
                     </p>
                     <figure>
-                        <img class="product" src="../assets/analysis-macbook=pro-14-2021-6.jpeg" alt="analysis-image-5" height="350" width="450">
+                        <img id="product-analysis_6" src="../assets/analysis-macbook=pro-14-2021-6.jpeg" alt="analysis-image-5" height="350" width="450">
                     </figure>
-                    
-                </section>
+                   </span> 
+              </section>
                 
-                <section class="Additional-info">
-                    <h2>Additional Display</h2>
-                        
-                    <figure>
-                        <img class="product" src="../assets/apple-macbook-pro-14-2021-1.jpg" alt="display_image" height="250" width="250">
-                    
-                        <img class="product" src="../assets/apple-macbook-pro-14-2021-2.jpg" alt="display_image_1" height="200" width="200">
-                   
-                        <img class="product" src="../assets/apple-macbook-pro-14-2021-3.jpeg" alt="display_image_2" height="200" width="300">    
-                        
-                    </figure>
-                    <span id="Apple-product-presintation">
-                      <iframe width="560" height="315" src="https://www.youtube.com/embed/9tobL8U7dQo" title="YouTube video player"></iframe>
-                    </span>
-                    <p>
-                        If you're interested for more apple products and information<br>
-                        visit Apple's official website <a href="https://www.apple.com/gr/">here</a>
-                    </p>
-                    <p>
-                        If you want to go back to the Laptops' page click <a href="./products-laptops.html">here</a>.
-                    </p>
-                </section>
 
                 <section id="Ratings">
+                    
+                        <p>
+                            If you're interested for more apple products and information<br>
+                            visit Apple's official website <a href="https://www.apple.com/gr/">here</a>
+                            <br>
+                            If you want to go back to the Laptops' page click <a href="./products-laptops.html">here</a>.
+                        </p>
+                    
                   <fieldset>
                     <legend>Rate the product</legend>
                     <p>4.0 average based on 2 Reviews.</p>
@@ -186,7 +211,7 @@
                       <span class="fa fa-star"></span>
                     </span>   
 
-                    <input type="submit" id="btn_rate" name="Rate">
+                    <input type="submit" id="btn_rate" name="Rate" value = "Rate the product">
                     
                   </fieldset>
                           

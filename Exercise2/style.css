@@ -1,7 +1,8 @@
 body{
     background: #f1f1f1;
     color: #000;                /* body background color*/
-    /*-webkit-text-size-adjust: 100%; later...*/
+    -webkit-text-size-adjust: 100%; 
+    -webkit-font-smoothing: antialiased;
 
 }
 
@@ -51,7 +52,7 @@ a:link{
 }
 
 a:visited{
-    color:white; 
+    color:rgb(255, 242, 0); 
 }
 
 a:hover{
@@ -74,17 +75,17 @@ a:active{
 
     background-color: rgb(185, 180, 180);
     border-style:hidden;
-    /*
+    
     margin-left: 40%;
     margin-right: 40%;
     display:inline-block;
     position:relative;
-    line-height: 15px;  ideas for later...
+    line-height: 15px;  
     width: 213px;
     border-radius: 5px;
     padding: 0 16px 20px;
     overflow: hidden;
-    */
+    
 }
 
 .products-list{
@@ -265,4 +266,221 @@ a:active{
 /*style for pictures in footer area*/
 .row-footer > li{
     margin: 3px;
+}
+.product-info{
+    display: block;
+    width:100%
+}
+.product-info > h1{
+    margin-top: 0.3125rem;
+    
+    
+}
+.apple-macbook-pro-14-2021{
+
+    display:block;
+    background-color: white;
+    
+    max-width: 150rem;
+    border-radius: 17px;
+    padding-left: 1rem;
+    margin-left: 4rem;
+    margin-right: 2rem;
+    padding-bottom: 3rem;
+   
+    
+}
+
+.code-and-price{
+    display: inline-block;
+    font-size: x-large;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin:4em;
+}
+#product-characteristics,#characteristics{
+    
+    width: 50%;
+    background-color:rgb(209, 205, 205);
+    border-radius: 17px;
+    border-width: 1px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.specs,.description{
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+
+}
+.text{
+    text-align: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.specifications dd{
+    background-color:rgb(133, 133, 133);
+    padding-left: 2px;
+    text-align: center;
+}
+.specifications dt{
+    text-align: center;
+    background-color:#e0e0e0;
+    
+}
+.apple-macbook-pro-14-2021-analysis{
+    display: inline-block;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    margin-left: 20em;
+    margin-right:20em
+}
+#product-analysis_1{
+    float:left;
+    height:400px;
+    width:550px;
+    
+}
+#product-analysis_2{
+    float:right;
+    
+}
+#product-analysis_3{
+    float:left;
+    
+}
+#product-analysis_4{
+    float:right;
+}
+#product-analysis_5{
+    float:left;
+}
+#product-analysis_6{
+    float:right;
+}
+#Ratings{
+    background-color: #beb9b9;
+    border-radius: 17px;
+    margin: 5em;
+    padding:1em;
+}
+
+
+#Ratings p{
+    
+    display: block;
+    text-align: center;
+    font-family:montserrat;
+    font-size:large;
+    padding:1em;
+}
+#Ratings fieldset{
+    display: block;
+    border-style: dashed;
+    margin-block-start: 2em;
+    margin-inline-end: 2em;
+    font-family: montserrat, arial, verdana;
+    text-align: center;
+}
+
+#Ratings input{
+    padding:0.5em;
+    margin-left: 1em;
+    border-radius: 10px;
+}
+#User-Comments{
+    padding-bottom: 1em;
+    margin-bottom: 2em;
+    margin-left: 1em;
+}
+#User-Comments input{
+    padding-right:1em;
+    margin-left: 1em;
+    margin-top:1em ;
+}
+#User-Comments textarea {
+    display:block;
+    margin-left:1em;
+}
+#User-Comments label{
+    display:block;
+}
+/*----------------------------*/
+#Tech-Support{
+    background-color: #beb9b9;
+    border-radius: 17px;
+    margin: 3em;
+
+}
+#Tech-Support fieldset{
+    border-style: dashed;
+    margin-block-start: 2em;
+    margin-inline-end: 2em;
+    font-family: montserrat, arial, verdana;
+    text-align: center;
+}
+#Tech-Support h2{
+    font-weight: 550;
+    font: size 18px;
+    padding: 2em;
+    margin: 1em;
+    text-transform: uppercase;
+    color: #2C3E50;
+    letter-spacing: 2px;
+    font-weight: bold; 
+    
+}
+#Tech-Support input,#Tech-Support textarea{
+    padding:0.5em;
+    border: 1px solid #ccc;
+    margin-left: 1em;
+    margin-right: 1em;
+    display:inline-block;
+    font-weight: 700;
+    border-radius: 0px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+}
+#Tech-Support legend{
+    display:block;
+    margin:1em;
+    padding-right: 40px;
+}
+
+#Tech-Support label{
+    display:block;
+    font-weight: normal;
+    font-size: 13px;
+    color: #666;
+    margin: 1em;
+}
+
+#Tech-Support input:focus, #Tech-Support textarea:focus{
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #8709ee;
+    outline-width: 0;
+    transition: All 0.5s ease-in;
+    -webkit-transition: All 0.5s ease-in;
+    -moz-transition: All 0.5s ease-in;
+    -o-transition: All 0.5s ease-in;
+}
+#btn_submit{
+    display:inline-block;
+    width:30% !important;
+    background: #360a9b;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 25px !important;
+    cursor: pointer;
+    padding:1em;
+    margin:2em;
+    transition-duration: 0,3s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+#btn_submit:hover,#btn_submit:focus{
+    background-color: rgb(228, 215, 215);
+    box-shadow:  0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    color: black;
 }
