@@ -89,7 +89,7 @@ a:active{
 }
 
 .products-list{
-    display: flex;
+    display: block;
     flex-flow: row wrap;
     margin: 0.3125rem;
 }
@@ -112,7 +112,7 @@ a:active{
 .products-list .product .product-item-inner-box{
     height: 100%;
     flex-direction: column;
-    display: flex;
+    display: block;
     overflow: visible;
     position: relative;
     justify-content: flex-end;
@@ -158,7 +158,7 @@ a:active{
 
 .products-list .product .product-item-inner-box .product-code-review-wrapper{
     width: 100%;
-    display: flex;
+    display: block;
     flex-wrap: nowrap;
     align-content: center;
     justify-content: flex-start;
@@ -167,7 +167,7 @@ a:active{
 }
 
 .products-list .product .product-item-inner-box .product-code-review-wrapper .product-review{
-    display: flex;
+    display: block;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
@@ -245,7 +245,7 @@ a:active{
 
 /*style for images in footer in order to put them in a row*/
 .row-footer{
-   display: flex;
+   display: block;
    flex-wrap: wrap;
    align-items: center;
    justify-content: center;
