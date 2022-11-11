@@ -28,18 +28,39 @@ a{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-/*style for h2 in index-home page*/
-main > h2{
-    text-align: center;
-    font-size: 2em;
+/*--------------------INDEX PAGE---------------------------------*/
+/*style for the whole main index page*/
+#index-page{
+    background-color: turquoise;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-main > p{
+/*style for h2 in index-home page*/
+#index-page > h2{
+    text-align: center;
+    font-size: 2em;
+}
+
+#index-page > h3{
+    text-align: center;
     font-size: 1em;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+/*style for paragraphs in the main index page*/
+#index-page > p{
+    font-size: 1em;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+
+/*style for images in index page*/
+#index-page > img{
+    display: inline-block;
+    margin: auto;
+}
+
+/*------------------------------------------*/
 ul, ul > li{
     list-style-position: inside;
     list-style-type: none;
@@ -84,16 +105,18 @@ a:active{
     width: 213px;
     border-radius: 5px;
     padding: 0 16px 20px;
-    overflow: hidden;
-    
+    overflow: hidden;  
 }
 
+/*-------------------PRODUCTS---------------------------*/
+/*style for the class products list*/
 .products-list{
     display: block;
-    flex-flow: row wrap;
+    /*flex-flow: row wrap;*/
     margin: 0.3125rem;
 }
 
+/*style for each product inside the "column"*/
 .products-list li{
     margin: 0.3125rem;
     padding: 0;
@@ -102,6 +125,7 @@ a:active{
     border-radius: 0.3125rem;
 }
 
+/*style for each product box*/
 .products-list .product{
     background-color: #f1f1f1;
     padding: 1.25rem;
@@ -109,23 +133,25 @@ a:active{
     position: relative;
 }
 
+/*style for each product box, inside the box*/
 .products-list .product .product-item-inner-box{
     height: 100%;
-    flex-direction: column;
+    /*flex-direction: column;*/
     display: block;
     overflow: visible;
     position: relative;
     justify-content: flex-end;
 }
-
+/*style for each product box, inside the box upper side */
 .products-list .product .product-item-inner-box .product-item-inner-box-top-part{
     flex-grow: 1;
 }
-
+ /*style for each product's image*/
 .products-list .product .product-item-image{
     position: relative;
 }
 
+/*style for each product's detailed link behind image*/
 .products-list .product .product-item-image a{
     position: relative;
     display: block;
@@ -135,6 +161,7 @@ a:active{
     background-color: #f9f9f9;
 }
 
+/*style for each product title*/
 .products-list .product .product-title{
     text-align: left;
     word-break: break-word;
@@ -143,6 +170,7 @@ a:active{
     overflow: hidden;
 }
 
+/*style for each product's detailed link behind title*/
 .products-list .product .product-title a{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-style: normal;
@@ -156,33 +184,38 @@ a:active{
     background-color: #f9f9f9;
 }
 
+/*style for the "box" with stars and product's code*/
 .products-list .product .product-item-inner-box .product-code-review-wrapper{
     width: 100%;
     display: block;
-    flex-wrap: nowrap;
+    /*flex-wrap: nowrap;*/
     align-content: center;
-    justify-content: flex-start;
+    /*justify-content: flex-start;*/
     align-items: center;
     margin-top: 0.75rem;
 }
 
+/*style for the star review*/
 .products-list .product .product-item-inner-box .product-code-review-wrapper .product-review{
     display: block;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    /*flex-direction: row;
+    flex-wrap: nowrap;*/
     align-items: center;
     margin-bottom: 0;
 }
 
+/*style for product review star*/
 .product .product-review{
     position: relative;
-    text-align: center;
+    /*text-align: center;*/
 }
 
+/*style for stars ratings*/
 .checked{
     color: orange;
 }
 
+/*style for product's code*/
 .products-list .product .product-code{
     display: inline-block;
     font-size: 0.75rem;
@@ -190,6 +223,7 @@ a:active{
     margin-left: 10px;
 }
 
+/*style for product's price*/
 .products-list .product .product-item-inner-box .product-price{
     margin: 0.5625rem 0 0.6875rem;
     background-color: #f1f1f1;
@@ -197,8 +231,12 @@ a:active{
     width: 100%;
     height: unset;
 }
+/*----------------------------------------------------*/
 
+/*------------------ABOUT US PAGE---------------------------------*/
+/*style for h2 in creators bio*/
 #creators-bio > h2{
+    background-color: turquoise;
     text-align: center;
     font-size: 2em;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -206,6 +244,7 @@ a:active{
 
 /*style to create column like look for the bios*/
 #developer{
+    background-color: turquoise;
     float: left;
     width: 50%;
     margin-bottom: 10px;
@@ -218,6 +257,12 @@ a:active{
     clear: both;
 }
 
+/*style for h3s in developer sections*/
+#developer > h3{
+    text-align: center;
+}
+
+/*style for bio images*/
 #developer > img{
     float: left;
     margin-right: 10px;
@@ -234,11 +279,11 @@ a:active{
     margin-bottom: 10px;
     padding-top: 40px;
     padding-bottom: 40px;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -ms-flex-align: center;
+    /*display: -ms-flexbox;*/
+    display: block;
+    /*-ms-flex-direction: column;*/
+    /*flex-direction: column;*/
+    /*-ms-flex-align: center;*/
     align-items: center;
     clear: both;
 }
@@ -246,16 +291,19 @@ a:active{
 /*style for images in footer in order to put them in a row*/
 .row-footer{
    display: block;
-   flex-wrap: wrap;
+   /*flex-wrap: wrap;*/
    align-items: center;
    justify-content: center;
    list-style: none;
-   margin: 0;
+   margin-left: auto;  
+   margin-right: auto;
 }
+
 /*color for paragraph in footer*/
 .page-footer > p{
     color: white;
 }
+
 /*style for links in footer area*/
 .page-footer a{
     text-decoration: none;
@@ -267,15 +315,18 @@ a:active{
 .row-footer > li{
     margin: 3px;
 }
+/*-------------------------------------------------*/
+
+/*-------------------------------------------------*/
 .product-info{
     display: block;
     width:100%
 }
+
 .product-info > h1{
-    margin-top: 0.3125rem;
-    
-    
+    margin-top: 0.3125rem;   
 }
+
 .apple-macbook-pro-14-2021{
 
     display:block;
