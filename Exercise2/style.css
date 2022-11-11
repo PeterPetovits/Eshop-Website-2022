@@ -276,147 +276,109 @@ a:active{
     
     
 }
-.apple-macbook-pro-14-2021{
-
+#product-info{
     display:block;
+    text-align: center;
+    margin:2em;
+    vertical-align: baseline;
+}
+.apple-macbook-pro-14-2021{
+    display:inline-block;
     background-color: white;
-    
-    max-width: 150rem;
+    width:50%;
     border-radius: 17px;
-    padding-left: 1rem;
-    margin-left: 4rem;
-    margin-right: 2rem;
-    padding-bottom: 3rem;
-   
-    
+    text-align: center;
+    box-sizing: content-box;
+    margin-top:2em;
+    margin-bottom:2em;
+    margin-left:5em;
+    margin-right:5em;
+    padding:2em;
 }
 
 .code-and-price{
-    display: inline-block;
+    display: block;
     font-size: x-large;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    margin:4em;
+    margin-left:10em;
 }
-#product-characteristics,#characteristics{
-    
+.product-characteristics,.characteristics{
+    display:inline-block;
     width: 50%;
     background-color:rgb(209, 205, 205);
-    border-radius: 17px;
+    border-radius: 12px;
     border-width: 1px;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:montserrat, arial, verdana;
+    text-align: center;
+    margin:2em;
 }
 .specs,.description{
-    text-align: center;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    
-
+    display:block;
+    padding:0.5em;
+    margin:1em;
 }
 .text{
-    text-align: center;
+    margin:1em;
+    padding:1em;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .specifications dd{
     background-color:rgb(133, 133, 133);
-    padding-left: 2px;
-    text-align: center;
+    padding:0.5em;
+    margin: 1em;
+    border-radius: 12px;
 }
 .specifications dt{
-    text-align: center;
+    
     background-color:#e0e0e0;
-    
+    padding:0.5em;
+    margin:1em;
+    border-radius:12px;
 }
+
 .apple-macbook-pro-14-2021-analysis{
-    display: inline-block;
-    -webkit-box-orient: vertical;
+    margin: bottom 25px;
+    font:inherit;
     -webkit-box-direction: normal;
-    margin-left: 20em;
-    margin-right:20em
+    box-sizing: border-box;
+    overflow-wrap:break-word;
 }
-#product-analysis_1{
-    float:left;
-    height:400px;
-    width:550px;
-    
+.analysis,.speed,.screen,.camera,.sound,.connectivity{
+    width:100%;
+    word-break: break-word;
 }
-#product-analysis_2{
-    float:right;
-    
+*, *:before,*:after{
+    box-sizing: border-box;
 }
-#product-analysis_3{
-    float:left;
-    
+.apple-macbook-pro-14-2021-analysis .one-column, .apple-macbook-pro-14-2021-analysis{
+    margin-bottom: 50px;
 }
-#product-analysis_4{
-    float:right;
-}
-#product-analysis_5{
-    float:left;
-}
-#product-analysis_6{
-    float:right;
-}
-#Ratings{
+
+
+
+#Tech-Support,.Ratings-and-Comments{
+    display:inline-block;
+    width:80%;
     background-color: #beb9b9;
     border-radius: 17px;
-    margin: 5em;
-    padding:1em;
-}
-
-
-#Ratings p{
-    
-    display: block;
     text-align: center;
     font-family:montserrat;
     font-size:large;
-    padding:1em;
+    margin:5em 5em;
 }
-#Ratings fieldset{
-    display: block;
-    border-style: dashed;
+
+fieldset{
+    border:0, none;
+    border-style:none;
     margin-block-start: 2em;
     margin-inline-end: 2em;
     font-family: montserrat, arial, verdana;
-    text-align: center;
+    padding: 20px 20px;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
 }
-
-#Ratings input{
-    padding:0.5em;
-    margin-left: 1em;
-    border-radius: 10px;
-}
-#User-Comments{
-    padding-bottom: 1em;
-    margin-bottom: 2em;
-    margin-left: 1em;
-}
-#User-Comments input{
-    padding-right:1em;
-    margin-left: 1em;
-    margin-top:1em ;
-}
-#User-Comments textarea {
-    display:block;
-    margin-left:1em;
-}
-#User-Comments label{
-    display:block;
-}
-/*----------------------------*/
-#Tech-Support{
-    background-color: #beb9b9;
-    border-radius: 17px;
-    margin: 3em;
-
-}
-#Tech-Support fieldset{
-    border-style: dashed;
-    margin-block-start: 2em;
-    margin-inline-end: 2em;
-    font-family: montserrat, arial, verdana;
-    text-align: center;
-}
-#Tech-Support h2{
+#Tech-Support h2,.Ratings-and-Comments h2{
     font-weight: 550;
     font: size 18px;
     padding: 2em;
@@ -425,61 +387,80 @@ a:active{
     color: #2C3E50;
     letter-spacing: 2px;
     font-weight: bold; 
-    
 }
-#Tech-Support input,#Tech-Support textarea{
-    padding:0.5em;
-    border: 1px solid #ccc;
-    margin-left: 1em;
-    margin-right: 1em;
+input{
     display:inline-block;
-    font-weight: 700;
-    border-radius: 0px;
-    margin-bottom: 10px;
-    width: 100%;
-    box-sizing: border-box;
-    font-family: montserrat;
-}
-#Tech-Support legend{
-    display:block;
-    margin:1em;
-    padding-right: 40px;
 }
 
-#Tech-Support label{
+input,textarea{
+    
+    padding:12px;
+    border: 1px solid #ccc;
+    margin-left: 1em;
+    margin-right:1em;
+    font-weight: 700;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    margin-top: 1em;
+    width: 40%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    font-size: 13px;
+}
+textarea{
+    display:block;
+    width:70%;
+    margin-left:7em;
+}
+legend{
+    display:block;
+
+}
+label{
     display:block;
     font-weight: normal;
     font-size: 13px;
     color: #666;
-    margin: 1em;
+    
 }
-
-#Tech-Support input:focus, #Tech-Support textarea:focus{
-    -moz-box-shadow: none !important;
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
-    border: 1px solid #8709ee;
+input:focus,textarea:focus{
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid #7109c6;
     outline-width: 0;
     transition: All 0.5s ease-in;
     -webkit-transition: All 0.5s ease-in;
     -moz-transition: All 0.5s ease-in;
     -o-transition: All 0.5s ease-in;
 }
-#btn_submit{
+#btn_Rate{
     display:inline-block;
-    width:30% !important;
+    
+}
+#btn_submit,#btn_submit_1{
+    display:inline-block;
+   
+}
+#btn_submit,#btn_submit_1,#btn_Rate{
+    width: 25%;
+    margin: 2em;
+    padding: 2em;
     background: #360a9b;
     font-weight: bold;
     color: white;
     border: 0 none;
-    border-radius: 25px !important;
+    border-radius: 25px;
     cursor: pointer;
     padding:1em;
-    margin:2em;
     transition-duration: 0,3s;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
-#btn_submit:hover,#btn_submit:focus{
+
+#btn_submit:hover,#btn_submit:focus,#btn_submit_1:hover,#btn_submit_1:focus,#btn_Rate:hover,#btn_Rate:focus{
     background-color: rgb(228, 215, 215);
     box-shadow:  0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     color: black;
