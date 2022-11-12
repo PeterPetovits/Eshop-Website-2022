@@ -3,7 +3,6 @@ body{
     color: #000;                /* body background color*/
     -webkit-text-size-adjust: 100%; 
     -webkit-font-smoothing: antialiased;
-
 }
 
 .top-header{      
@@ -31,7 +30,6 @@ a{
 /*--------------------INDEX PAGE---------------------------------*/
 /*style for the whole main index page*/
 #index-page{
-    background-color: turquoise;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -41,23 +39,54 @@ a{
     font-size: 2em;
 }
 
+/*style for h3 in index page*/
 #index-page > h3{
     text-align: center;
     font-size: 1em;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 /*style for paragraphs in the main index page*/
 #index-page > p{
     font-size: 1em;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
 }
 
+/*style for links in index page*/
+#index-page a{
+    color: red;
+}
+
+/*style for links when hover in index page*/
+#index-page a:hover{
+    background-color: black;
+}
+
 /*style for images in index page*/
-#index-page > img{
-    display: inline-block;
-    margin: auto;
+.index-images > #image1, #image2, #image3, #image4, #image5, #image6{
+    display: inline;
+    margin-left: 8em;
+    margin-right: 8em;
+}
+
+/*style for images in index page */
+.index-images > #image4, #image5, #image6{
+    display: inline;
+    margin-left: 6em;
+    margin-right: 6em;
+}
+
+/*style for images in index page*/
+.index-images > #image7, #image8{
+    display: inline;
+    margin-left: 18em;
+    margin-right: 18em;
+}
+
+/*style for images in index page*/
+.index-images > #image9, #image10{
+    display: inline;
+    margin-left: 20em;
+    margin-right: 20em;
 }
 
 /*------------------------------------------*/
@@ -68,22 +97,27 @@ ul, ul > li{
     padding: 0;
 }
 
+/*style for links*/
 a:link{
     color:white;
 }
 
+/*style for visited links*/
 a:visited{
     color:rgb(255, 242, 0); 
 }
 
+/*style for links when hover above them*/
 a:hover{
     background-color: rgb(0, 68, 255);
 }
 
+/*style for selected links*/
 a:active{
     background-color: #f1f1f1;
 }
 
+/*style for the website logo*/
 .logo{
     border: 3px solid black
 }
@@ -93,10 +127,8 @@ a:active{
 }
 
 #navigation-categories-bar{
-
     background-color: rgb(185, 180, 180);
     border-style:hidden;
-    
     margin-left: 40%;
     margin-right: 40%;
     display:inline-block;
@@ -140,12 +172,14 @@ a:active{
     display: block;
     overflow: visible;
     position: relative;
-    justify-content: flex-end;
+    /*justify-content: flex-end;*/
 }
+
 /*style for each product box, inside the box upper side */
 .products-list .product .product-item-inner-box .product-item-inner-box-top-part{
-    flex-grow: 1;
+    /*flex-grow: 1;*/
 }
+
  /*style for each product's image*/
 .products-list .product .product-item-image{
     position: relative;
@@ -236,7 +270,6 @@ a:active{
 /*------------------ABOUT US PAGE---------------------------------*/
 /*style for h2 in creators bio*/
 #creators-bio > h2{
-    background-color: turquoise;
     text-align: center;
     font-size: 2em;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -244,10 +277,19 @@ a:active{
 
 /*style to create column like look for the bios*/
 #developer{
-    background-color: turquoise;
     float: left;
     width: 50%;
     margin-bottom: 10px;
+}
+
+/*link color for developer*/
+#developer a:link{
+    color: red;
+}
+
+/*link color hover for developer*/
+#developer a:hover{
+    background-color: black;
 }
 
 /* Clear floats after the columns */
@@ -268,6 +310,7 @@ a:active{
     margin-right: 10px;
 }
 
+/*----------------------FOOTER AREA-----------------------------*/
 /*style for footer*/
 .page-footer{
     background-image: url(/assets/background_image_4.jpg);
