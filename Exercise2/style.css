@@ -4,17 +4,20 @@ body{
     -webkit-text-size-adjust: 100%; 
     -webkit-font-smoothing: antialiased;
 }
+*:before,*:after{
+    box-sizing: border-box;
+}
 
 .top-header{      
     background-image: url(/assets/background_image_4.jpg);      /* top-header with background image*/
     text-align: center;
 }
-
+/*main style for link content */
 a{   
     max-width: 100%;
     border-radius: 17px;
     margin-top: 8px;
-    padding-left: 8px;      /* are all these for now? i think not */
+    padding-left: 8px;      
     padding-right: 8px;
     z-index: 1;
     text-decoration: none;
@@ -88,8 +91,7 @@ a{
     margin-left: 20em;
     margin-right: 20em;
 }
-
-/*------------------------------------------*/
+/*-----------------PRODUCTS' LIST PAGE-------------------*/
 ul, ul > li{
     list-style-position: inside;
     list-style-type: none;
@@ -360,42 +362,53 @@ a:active{
 /*-------------------------------------------------*/
 
 /*-------------------------------------------------*/
-.product-info{
+#product-info{          /*style for Article inside main */
     display: block;
-    width:100%
+    width:100%;
+    text-align: center;
+    margin:2em;
 }
 
-.product-info > h1{
+#product-info > h1{         /*style for h1 inside article */
     margin-top: 0.3125rem;   
 }
 
-#product-info{
-
-    display:block;
-    text-align: center;
-    margin:2em;
-    vertical-align: baseline;
-}
+                     /*style for first section inside article */
 .apple-macbook-pro-14-2021{
     display:inline-block;
     background-color: white;
     width:50%;
     border-radius: 17px;
     text-align: center;
-    box-sizing: content-box;
+    box-sizing: border-box;
     margin-top:2em;
     margin-bottom:2em;
     margin-left:5em;
     margin-right:5em;
     padding:2em;
 }
-
+/*Attempt a presentation slide*/
+.apple-macbook-pro-14-2021 ul{      /*Style for ul inside section  */
+    display:list-item;
+    
+}
+.apple-macbook-pro-14-2021 li{      /*style for li inside ul */
+    list-style: none;
+}
+/*Style for the rest of the images inside li*/
+.apple-macbook-pro-14-2021 li .product,.apple-macbook-pro-14-2021 #Apple-product-presintation iframe{
+    height:40px;
+    width:40px;
+}
+/*Style for code and price inner section */
 .code-and-price{
     display: block;
     font-size: x-large;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family:montserrat, arial, verdana;
     margin-left:10em;
+
 }
+/*Style for characteristics and and specifications inner sections respectively*/
 .product-characteristics,.characteristics{
     display:inline-block;
     width: 50%;
@@ -406,22 +419,26 @@ a:active{
     text-align: center;
     margin:2em;
 }
+/*Style for dl specifications*/
 .specs,.description{
     display:block;
     padding:0.5em;
     margin:1em;
 }
+/*Style for text inside description*/
 .text{
     margin:1em;
     padding:1em;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+/*style for dd inside dl in chacteristics */
 .specifications dd{
     background-color:rgb(133, 133, 133);
     padding:0.5em;
     margin: 1em;
     border-radius: 12px;
 }
+/*Style for dd*/
 .specifications dt{
     
     background-color:#e0e0e0;
@@ -429,27 +446,57 @@ a:active{
     margin:1em;
     border-radius:12px;
 }
-
+/*Style for second analysis section*/
 .apple-macbook-pro-14-2021-analysis{
-    margin: bottom 25px;
+    text-align:center;
+    margin: 2em;
     font:inherit;
     -webkit-box-direction: normal;
     box-sizing: border-box;
     overflow-wrap:break-word;
+    
 }
-.analysis,.speed,.screen,.camera,.sound,.connectivity{
-    width:100%;
-    word-break: break-word;
+/*style for analysis */
+.analysis{
+    display:block;
+    margin:2em;
 }
-*, *:before,*:after{
-    box-sizing: border-box;
+/*style for first image in analysis*/
+#product-analysis_1{
+    float:none;
 }
-.apple-macbook-pro-14-2021-analysis .one-column, .apple-macbook-pro-14-2021-analysis{
-    margin-bottom: 50px;
+/*style for the rest of the features text-images*/
+.Features{
+    float: left;
+    width: 50%;
+    margin-bottom: 10px;
+}
+/*style for text images to put them in rows and float inside rows*/
+.Features::after{
+    content:"";
+    display:table;
+    clear:both;
+}
+.Features h3{
+    text-align: center;
+}
+
+.Features p{
+    text-align: center;
+    margin-right:4em;
+    margin-left:4em;
+}
+#product-analysis_3,#product-analysis_5,#product-analysis_6{
+    float:right;
+
+}
+#product-analysis_2,#product-analysis_4{
+    float:left;
 }
 
 
 
+/*Style for Tech support and Ratings section */
 #Tech-Support,.Ratings-and-Comments{
     display:inline-block;
     width:80%;
@@ -460,9 +507,9 @@ a:active{
     font-size:large;
     margin:5em 5em;
 }
-
+/*Style for fieldset inside tech support and Ratings section*/
 fieldset{
-    border:0, none;
+    border:0 none;
     border-style:none;
     margin-block-start: 2em;
     margin-inline-end: 2em;
@@ -472,9 +519,10 @@ fieldset{
     width: 80%;
     margin: 0 10%;
 }
+/*h2 for these sections*/
 #Tech-Support h2,.Ratings-and-Comments h2{
     font-weight: 550;
-    font: size 18px;
+    font-size: 18px;
     padding: 2em;
     margin: 1em;
     text-transform: uppercase;
@@ -482,10 +530,12 @@ fieldset{
     letter-spacing: 2px;
     font-weight: bold; 
 }
+/*separate display for input and textarea*/
+/*style for input fields and buttons*/
 input{
     display:inline-block;
 }
-
+/*more style for input fields as well as textarea */
 input,textarea{
     
     padding:12px;
@@ -501,15 +551,18 @@ input,textarea{
     font-family: montserrat;
     font-size: 13px;
 }
+/*Text area style*/
 textarea{
     display:block;
     width:70%;
     margin-left:7em;
 }
+/*display for legend field in Ratings and tech support sections*/
 legend{
     display:block;
 
 }
+/*Labeling input areas and textareas*/
 label{
     display:block;
     font-weight: normal;
@@ -517,6 +570,7 @@ label{
     color: #666;
     
 }
+/*style for focusing when clicking on*/
 input:focus,textarea:focus{
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
@@ -528,6 +582,7 @@ input:focus,textarea:focus{
     -moz-transition: All 0.5s ease-in;
     -o-transition: All 0.5s ease-in;
 }
+/*different displays for buttons because of the layout-positioning needs*/
 #btn_Rate{
     display:inline-block;
     
@@ -536,6 +591,7 @@ input:focus,textarea:focus{
     display:inline-block;
    
 }
+/*Main style for input-button*/
 #btn_submit,#btn_submit_1,#btn_Rate{
     width: 25%;
     margin: 2em;
@@ -547,13 +603,13 @@ input:focus,textarea:focus{
     border-radius: 25px;
     cursor: pointer;
     padding:1em;
-    transition-duration: 0,3s;
+    transition-duration: 0.3s;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-
+/*style for hover and focus on button-input areas */
 #btn_submit:hover,#btn_submit:focus,#btn_submit_1:hover,#btn_submit_1:focus,#btn_Rate:hover,#btn_Rate:focus{
     background-color: rgb(228, 215, 215);
     box-shadow:  0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
