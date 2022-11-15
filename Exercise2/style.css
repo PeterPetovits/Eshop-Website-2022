@@ -682,10 +682,8 @@ input,textarea{
 textarea{
     display:block;
     width:70%;
-    margin-right: 7em;
-    margin-left: 7em;
     padding:1em;
-    
+    margin:2% 15% -0.4%;
 }
 /*display for legend field in Ratings and tech support sections*/
 legend{

@@ -1,8 +1,15 @@
 body{
+   
     background: #f1f1f1;
     color: #000;                /* body background color*/
     -webkit-text-size-adjust: 100%; 
     -webkit-font-smoothing: antialiased;
+}
+main{
+    display:grid;
+    grid-template-columns: 1fr,2fr; /*change it later*/
+    grid-template-rows: 1fr,1fr,1fr; 
+    /*Other stuff inside*/
 }
 *:before,*:after{
     box-sizing: border-box;
@@ -95,7 +102,7 @@ a{
 ul, ul > li{
     list-style-position: inside;
     list-style-type: none;
-    margin: 0;      /*remove defaults from browser change it later*/
+    margin: 0;      /*remove defaults from browser might change it later*/
     padding: 0;
 }
 
@@ -123,17 +130,24 @@ a:active{
 .logo{
     border: 3px solid black
 }
-
+/*Main content section style as a flexbox*/
 #main-content{
+    
     text-align: center;
+    align-items: center;
+    display:flex;
+    flex-flow: column wrap;
+    flex-shrink: 0;         /*header and navigation menu cannot shrink*/
+    flex-grow:0;            /*header and navigation menu cannot grow*/
 }
 
 #navigation-categories-bar{
+    display:inline-block;
+    align-items: center;
     background-color: rgb(185, 180, 180);
     border-style:hidden;
     margin-left: 40%;
     margin-right: 40%;
-    display:inline-block;
     position:relative;
     line-height: 15px;  
     width: 213px;
@@ -141,6 +155,8 @@ a:active{
     padding: 0 16px 20px;
     overflow: hidden;  
 }
+
+
 
 /*-------------------PRODUCTS---------------------------*/
 /*style for the class products list*/
@@ -623,7 +639,8 @@ a:active{
 
 /*Style for Tech support and Ratings section */
 #Tech-Support,.Ratings-and-Comments{
-    display:inline-block;
+    display:flex;
+    position:static;
     width:80%;
     background-color: #beb9b9;
     border-radius: 17px;
@@ -632,10 +649,13 @@ a:active{
     font-size:large;
     box-sizing: border-box;
     margin:170px;
-    
+    flex-flow:column wrap;
+    flex-grow: 0;
+    flex-shrink: 0;
 }
 /*Style for fieldset inside tech support and Ratings section*/
 fieldset{
+    position: relative;
     border:0 none;
     border-style:none;
     margin-block-start: 2em;
@@ -660,12 +680,11 @@ fieldset{
 /*separate display for input and textarea*/
 /*style for input fields and buttons*/
 input{
-    display:inline-block;
     margin-left: 1em;
     margin-right:1em;
     padding:12px;
     width: 40%;
-    
+    position:relative;
 }
 /*more style for input fields as well as textarea */
 input,textarea{
@@ -680,18 +699,14 @@ input,textarea{
 }
 /*Text area style*/
 textarea{
-    display:block;
-    width:70%;
-    margin-right: 7em;
-    margin-left: 7em;
-    padding:1em;
     
+    width:70%;
+    margin:2% 15% -0.4%;
+    padding:1em;
+    position:relative;
 }
 /*display for legend field in Ratings and tech support sections*/
-legend{
-    display:block;
 
-}
 /*Labeling input areas and textareas*/
 label{
     display:block;
@@ -715,12 +730,9 @@ input:focus,textarea:focus{
 /*different displays for buttons because of the layout-positioning needs*/
 #btn_Rate{
     display:inline-block;
-    
+    position:relative;
 }
-#btn_submit,#btn_submit_1{
-    display:inline-block;
-   
-}
+
 /*Main style for input-button*/
 #btn_submit,#btn_submit_1,#btn_Rate{
     width: 25%;
