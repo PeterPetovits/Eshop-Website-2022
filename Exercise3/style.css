@@ -7,6 +7,10 @@ body{
     display: grid;
     grid-template-columns: 2fr;
     grid-template-rows: 300px auto 300px;
+    @font-face {
+        font-family: montserrat;
+        src: url(https://fonts.google.com/specimen/Montserrat);
+    }
 }
 /*
 main{
@@ -457,24 +461,26 @@ a:active{
     margin: 3px;
 }
 /*-------------------------------------------------*/
-
+/*------------PRODUCT PRESENTATION PAGE------------*/
 /*-------------------------------------------------*/
+
+
 #product-info{          /*style for Article inside main */
     display: block;
-    width:100%;
     text-align: center;
-    margin:2em;
     align-items: center;
     
 }
 
 #product-info > h1{         /*style for h1 inside article */
-    margin-top: 0.3125rem;   
+    margin-top: 0.9125rem;
+    
+    
 }
 
 /*style for first section inside article */
 .apple-macbook-pro-14-2021{
-    display:inline-block;
+    display:inline-flex;
     background-color: white;
     width:50%;
     border-radius: 17px;
@@ -486,7 +492,8 @@ a:active{
     margin-right:5em;
     padding:2em;
     align-items: center;
-    
+    justify-content: center;
+    flex-flow: column wrap;
 }
 /*Preparing a presintation slide*/
 /*Section content style*/
@@ -696,18 +703,18 @@ a:active{
     display:flex;
     flex-flow:column wrap;
     justify-content: center;
-    align-items: left;
+    position:relative;
     text-align:center;
     font:inherit;
     -webkit-box-direction: normal;
     box-sizing: border-box;
     overflow-wrap:break-word;
-    
+    margin:2em;
 }
 /*style for analysis */
 .analysis{
     display:block;
-    margin:2em;
+    
 }
 /*style for first image in analysis*/
 #product-analysis_1{
@@ -717,48 +724,83 @@ a:active{
 .Product-features{
     display:grid;
     position:relative;
+    box-sizing: border-box;
     overflow:hidden;
-    column-gap: 20px;
+    column-gap: 50px;
     row-gap:1em;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 3fr 2fr;
     grid-auto-rows: auto;
-    align-items: left;
-    
+    margin-block-start: 3em;
+    margin-block-end: 3em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
 }
-.Features .Product-analysis-2{
+.Product-analysis-2{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:flex-start;
+    align-items: left;
     grid-column: 1;
     grid-row:1;
-    margin:4em;
+    text-align: left;
+    position:relative;
 }
+
 .Product-analysis-3{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:flex-start;
+    align-items: left;
+    text-align: left;
     grid-column: 2;
     grid-row: 1;
-    margin:4em;
+    position:relative;
 }
 .Product-analysis-4{
-    grid-column: 3;
-    grid-row: 1;
-    margin:4em;
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:flex-start;
+    align-items: left;
+    text-align: left;
+    grid-column: 1;
+    grid-row: 2;
+    position:relative;
 }
 .Product-analysis-5{
-    grid-column:1;
+    display:flex;
+    flex-flow:column wrap;
+    justify-content:flex-start;
+    align-items: left;
+    text-align: left;
+    grid-column:2;
     grid-row: 2;
-    margin:4em;
+    position:relative;
 }
 .Product-analysis-6{
-    grid-column:2;
-    grid-row:2;
-    margin:4em;
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:flex-start;
+    align-items: left;
+    text-align: left;
+    grid-column:1;
+    grid-row:3;
+    position:relative;
 }
-.Features h3{
-    margin-top:3em;
-    flex-grow: 1;
+.product-analysis-text{
+    margin:1em;
+    padding:1em;
 }
 .Features .product-analysis{
     position:relative;
     overflow: hidden;
 }
-.Features p{
+.Features .product-analysis-text h3{
+    margin-top:3em;
+    flex-grow: 1;
+}
+
+.Features .product-analysis-text p{
     margin-right:4em;
     margin-left:4em;
     overflow: hidden;
@@ -777,18 +819,20 @@ a:active{
 /*Style for Tech support and Ratings section */
 #Tech-Support,.Ratings-and-Comments{
     display:flex;
-    position:static;
+    position:relative;
     width:80%;
     background-color: #beb9b9;
     border-radius: 17px;
     text-align: center;
-    font-family:montserrat;
+    /*font-family:montserrat;*/
     font-size:large;
     box-sizing: border-box;
     margin:170px;
     flex-flow:column wrap;
     flex-grow: 1;
     flex-shrink: 2;
+    grid-column: 2;
+    grid-row:2;
 }
 /*Style for fieldset inside tech support and Ratings section*/
 fieldset{
