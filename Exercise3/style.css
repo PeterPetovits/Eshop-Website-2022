@@ -859,7 +859,7 @@ a:active{
 */
 
 /*Style for Tech support and Ratings section */
-#Tech-Support,.Ratings-and-Comments{
+.Ratings-and-Comments{
     display:flex;
     position:relative;
     width:80%;
@@ -875,6 +875,21 @@ a:active{
     flex-shrink: 2;
     grid-column: 2;
     grid-row:2;
+}
+#Tech-Support{
+    display:flex;
+    position:relative;
+    width:80%;
+    background-color: #beb9b9;
+    border-radius: 17px;
+    text-align: center;
+    /*font-family:montserrat;*/
+    font-size:large;
+    box-sizing: border-box;
+    margin:200px;
+    flex-flow:column wrap;
+    flex-grow: 1;
+    flex-shrink: 2;
 }
 
 /*Style for fieldset inside tech support and Ratings section*/
