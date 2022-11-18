@@ -12,14 +12,7 @@ body{
         src: url(https://fonts.google.com/specimen/Montserrat);
     }
 }
-/*
-main{
-    display:grid;
-    grid-template-columns: 1fr 2fr; /*change it later
-    grid-template-rows: 1fr 1fr 1fr; 
-    /*Other stuff inside
-}
-*/
+
 *:before,*:after{
     box-sizing: border-box;
 }
@@ -56,18 +49,17 @@ a{
     display: grid;
     grid-template-columns: 2fr 2fr 2fr;
     grid-auto-rows: auto;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-
 
 /*style for h2 in index-home page*/
 #index-page-main > h2{
     text-align: center;
     font-size: 2em;
     grid-row: 1;
-    grid-column: 1 / 4 ;
+    grid-column: 1 / 4;
 }
 
+/*style for a span of paragraph's elements*/
 #index-paragraph1{
     grid-row: 2;
     grid-column: 1 / 4;
@@ -75,6 +67,7 @@ a{
     font-size: 1em;
 }
 
+/*style for a span of paragraph's elements*/
 #index-paragraph2{
     grid-row: 4;
     grid-column: 1 / 4;
@@ -82,6 +75,7 @@ a{
     font-size: 1em;
 }
 
+/*style for a span of paragraph's elements*/
 #index-paragraph3{
     grid-row: 6;
     grid-column: 1 / 4;
@@ -107,54 +101,84 @@ a{
     background-color: black;
 }
 
+/*style for figure in index page*/
 #image1{
     grid-row: 3;
     grid-column: 1;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/*style for figure in index page*/
 #image2{
     grid-row: 3;
     grid-column: 2;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/*style for figure in index page*/
 #image3{
     grid-row: 3;
     grid-column: 3;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/*style for figure in index page*/
 #image4{
     grid-row: 5;
     grid-column: 1;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/*style for figure in index page*/
 #image5{
     grid-row: 5;
     grid-column: 2;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/*style for figure in index page*/
 #image6{
     grid-row: 5;
     grid-column: 3;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/*style for figure in index page*/
 #image7{
     grid-row: 7;
     grid-column: 1 / 2;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/*style for figure in index page*/
 #image8{
     grid-row: 7;
     grid-column:  3 / 4;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/*style for figure in index page*/
 #image9{
     grid-row: 9;
     grid-column: 1 / 2;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+/*style for figure in index page*/
 #image10{
     grid-row: 9;
     grid-column: 3 / 4;
+    margin-left: auto;
+    margin-right: auto;
 }
 /*-----------------PRODUCTS' LIST PAGE-------------------*/
 ul, ul > li{
@@ -188,9 +212,9 @@ a:active{
 .logo{
     border: 3px solid black
 }
+
 /*Main content section style as a flexbox*/
 #main-content{
-    
     text-align: center;
     align-items: center;
     display:flex;
@@ -213,8 +237,6 @@ a:active{
     padding: 0 16px 20px;
     overflow: hidden;  
 }
-
-
 
 /*-------------------PRODUCTS---------------------------*/
 /*style for the class products list*/
@@ -241,6 +263,11 @@ a:active{
     position: relative;
 }
 
+/*style for product box hover affect*/
+.products-list .product:hover{
+    box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+}
+
 /*style for each product box, inside the box*/
 .products-list .product .product-item-inner-box{
     height: 100%;
@@ -264,7 +291,7 @@ a:active{
 /*style for each product's detailed link behind image*/
 .products-list .product .product-item-image a{
     position: relative;
-    display: flex;
+    /*display:flex*/ /*it can be used, but creates wrong dimension product image background*/
     overflow: hidden;
     margin: 0 auto 1.25rem;
     width: 100%;
@@ -282,7 +309,6 @@ a:active{
 
 /*style for each product's detailed link behind title*/
 .products-list .product .product-title a{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-style: normal;
     font-weight: normal;
     text-rendering: optimizeLegibility;
@@ -349,7 +375,6 @@ a:active{
     display: grid;
     grid-template-columns: 2fr 2fr;
     grid-auto-rows: auto;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 /*style for h2 in creators bio*/
@@ -360,37 +385,48 @@ a:active{
     grid-column: 1 / 3;
 }
 
-/*style to create column like look for the bios*/
+/*style to create column like look for developer 1 bio*/
 #developer1{
+    display: flex;
+    flex-direction: column;
+    flex-flow: column;
+    flex-wrap: wrap;
     grid-row: 2;
     grid-column: 1;
     margin: 3px;
 }
 
+/*style to create column like look for developer 2 bio*/
 #developer2{
+    display: flex;
+    flex-direction: column;
+    flex-flow: column;
+    flex-wrap: wrap;
     grid-row: 2;
     grid-column: 2;
     margin: 3px;
 }
 
+/*style for h3 up the picture of developer 1*/
 #developer1 > h3{
     text-align: center;
 }
 
+/*style for h3 up the picture of developer 2*/
 #developer2 > h3{
     text-align: center;
 }
 
+/*style for developer's 1 image*/
 #developer1 > img{
-    display: block;
     margin-left: auto;
     margin-right: auto;
     width: 200px;
     height: 200px;
 }
 
+/*style for developer's 2 image*/
 #developer2 > img{
-    display: block;
     margin-left: auto;
     margin-right: auto;
     width: 200px;
@@ -405,13 +441,6 @@ a:active{
 /*link color hover for developer*/
 #creators-bio a:hover{
     background-color: black;
-}
-
-/*style for bio images*/
-#creators-bio > img{
-    float: left;
-    margin-right: 10px;
-    grid-row: 3;
 }
 
 /*----------------------FOOTER AREA-----------------------------*/
@@ -469,13 +498,10 @@ a:active{
     display: block;
     text-align: center;
     align-items: center;
-    
 }
 
 #product-info > h1{         /*style for h1 inside article */
     margin-top: 0.9125rem;
-    
-    
 }
 
 /*style for first section inside article */
@@ -498,7 +524,6 @@ a:active{
 /*Preparing a presintation slide*/
 /*Section content style*/
 
-
 .Content{
   background:white;
   width: 100%;
@@ -508,12 +533,14 @@ a:active{
   align-items: center;
   justify-content: center;
 }
+
 #presintation-area{
     width: fit-content;
     height: fit-content;
     position:relative;
     /*background:purple;*/
 }
+
 /* Styling all three spans */
 #presentation-area .presentation {
     width: 100%;
@@ -661,6 +688,7 @@ a:active{
     font-size: 13px;
     color: #666;
 }
+
 /*Style for characteristics and and specifications inner sections respectively*/
 .product-characteristics,.characteristics{
     display: inline-block;
@@ -672,17 +700,20 @@ a:active{
     text-align: center;
     margin:2em;
 }
+
 /*Style for dl specifications*/
 .specs,.description{
     padding:0.5em;
     margin:1em;
 }
+
 /*Style for text inside description*/
 .text{
     margin:1em;
     padding:1em;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
 /*style for dd inside dl in chacteristics */
 .specifications dd{
     background-color:rgb(133, 133, 133);
@@ -690,14 +721,15 @@ a:active{
     margin: 1em;
     border-radius: 12px;
 }
+
 /*Style for dd*/
 .specifications dt{
-    
     background-color:#e0e0e0;
     padding:0.5em;
     margin:1em;
     border-radius:12px;
 }
+
 /*Style for second analysis section*/
 .apple-macbook-pro-14-2021-analysis{
     display:flex;
@@ -711,15 +743,18 @@ a:active{
     overflow-wrap:break-word;
     margin:2em;
 }
+
 /*style for analysis */
 .analysis{
     display:block;
     
 }
+
 /*style for first image in analysis*/
 #product-analysis_1{
     float:none;
 }
+
 /*style for the rest of the features text-images*/
 .Product-features{
     display:grid;
@@ -736,6 +771,7 @@ a:active{
     margin-inline-end: 0px;
     padding-inline-start: 40px;
 }
+
 .Product-analysis-2{
     display:flex;
     flex-flow:row wrap;
@@ -757,6 +793,7 @@ a:active{
     grid-row: 1;
     position:relative;
 }
+
 .Product-analysis-4{
     display:flex;
     flex-flow:row wrap;
@@ -767,6 +804,7 @@ a:active{
     grid-row: 2;
     position:relative;
 }
+
 .Product-analysis-5{
     display:flex;
     flex-flow:column wrap;
@@ -777,6 +815,7 @@ a:active{
     grid-row: 2;
     position:relative;
 }
+
 .Product-analysis-6{
     display:flex;
     flex-flow:row wrap;
@@ -787,14 +826,17 @@ a:active{
     grid-row:3;
     position:relative;
 }
+
 .product-analysis-text{
     margin:1em;
     padding:1em;
 }
+
 .Features .product-analysis{
     position:relative;
     overflow: hidden;
 }
+
 .Features .product-analysis-text h3{
     margin-top:3em;
     flex-grow: 1;
@@ -834,6 +876,7 @@ a:active{
     grid-column: 2;
     grid-row:2;
 }
+
 /*Style for fieldset inside tech support and Ratings section*/
 fieldset{
     position: relative;
@@ -847,6 +890,7 @@ fieldset{
     width: 80%;
     margin: 0 10%;
 }
+
 /*h2 for these sections*/
 #Tech-Support h2,.Ratings-and-Comments h2{
     font-weight: 550;
@@ -858,6 +902,7 @@ fieldset{
     letter-spacing: 2px;
     font-weight: bold; 
 }
+
 /*separate display for input and textarea*/
 /*style for input fields and buttons*/
 input{
@@ -867,6 +912,7 @@ input{
     width: 40%;
     position:relative;
 }
+
 /*more style for input fields as well as textarea */
 input,textarea{
     margin-bottom: 2em;
@@ -878,6 +924,7 @@ input,textarea{
     font-family: montserrat;
     font-size: 13px;
 }
+
 /*Text area style*/
 textarea{
     
@@ -886,6 +933,7 @@ textarea{
     padding:1em;
     position:relative;
 }
+
 /*display for legend field in Ratings and tech support sections*/
 
 /*Labeling input areas and textareas*/
@@ -896,6 +944,7 @@ label{
     color: #666;
     
 }
+
 /*style for focusing when clicking on*/
 input:focus,textarea:focus{
     -moz-box-shadow: none;
@@ -908,6 +957,7 @@ input:focus,textarea:focus{
     -moz-transition: All 0.5s ease-in;
     -o-transition: All 0.5s ease-in;
 }
+
 /*different displays for buttons because of the layout-positioning needs*/
 #btn_Rate{
     display:inline-block;
@@ -932,6 +982,7 @@ input:focus,textarea:focus{
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
 /*style for hover and focus on button-input areas */
 #btn_submit:hover,#btn_submit:focus,#btn_submit_1:hover,#btn_submit_1:focus,#btn_Rate:hover,#btn_Rate:focus{
     background-color: rgb(228, 215, 215);
