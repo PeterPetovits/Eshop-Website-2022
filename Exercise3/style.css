@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 /*style for body for all webpages*/
 body{
     background: #f1f1f1;
@@ -7,11 +8,25 @@ body{
     display: grid;
     grid-template-columns: 2fr;
     grid-template-rows: 300px auto 300px;
-    @font-face {
-        font-family: montserrat;
-        src: url(https://fonts.google.com/specimen/Montserrat);
-    }
+    font-family: 'Montserrat';
+    font-weight: 700;
 }
+/*
+@font-face { 
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: x-large;
+    src: url('../montserrat-v25-latin/montserrat-v25-latin-regular.eot'); /* IE9 Compat Modes     
+    src:local(''),
+        url('../montserrat-v25-latin/montserrat-v25-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 
+        url('../montserrat-v25-latin/montserrat-v25-latin-regular.woff2') format('woff2'), /* Super Modern Browsers 
+        url('../montserrat-v25-latin/montserrat-v25-latin-regular.woff') format('woff'), /* Modern Browsers 
+        url('../montserrat-v25-latin/montserrat-v25-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS 
+        url('../montserrat-v25-latin/montserrat-v25-latin-regular.svg#Montserrat') format('svg'); /* Legacy iOS 
+         
+}
+*/
 
 *:before,*:after{
     box-sizing: border-box;
@@ -40,7 +55,7 @@ a{
     color:rgb(2, 2, 2);
     letter-spacing: 4px;
     text-shadow: 2px 2px 5px red; /* it will get fixed if needed*/
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
 }
 
 /*--------------------INDEX PAGE---------------------------------*/
@@ -236,6 +251,7 @@ a:active{
     border-radius: 5px;
     padding: 0 16px 20px;
     overflow: hidden;  
+    grid-row: 2;
 }
 
 /*-------------------PRODUCTS---------------------------*/
@@ -501,7 +517,7 @@ a:active{
 }
 
 #product-info > h1{         /*style for h1 inside article */
-    margin-top: 0.9125rem;
+    margin-top: 1rem;
 }
 
 /*style for first section inside article */
@@ -678,7 +694,6 @@ a:active{
 .code-and-price{
     display: block;
     font-size: xx-large;
-    font-family:montserrat, arial, verdana;
     margin-left:10em;
 
 }
@@ -688,30 +703,35 @@ a:active{
     font-size: 13px;
     color: #666;
 }
+.code-and-price .price{
+    font-weight:bold;
+}
 
 /*Style for characteristics and and specifications inner sections respectively*/
 .product-characteristics,.characteristics{
     display: inline-block;
+    align-items:center;
+    flex-grow: 2;
+    flex-shrink: 2;
     width: 50%;
     background-color:rgb(209, 205, 205);
     border-radius: 12px;
     border-width: 1px;
-    font-family:montserrat, arial, verdana;
     text-align: center;
     margin:2em;
 }
 
-/*Style for dl specifications*/
+/*Style for dl specifications and description headers*/
 .specs,.description{
     padding:0.5em;
     margin:1em;
+    position:relative;
 }
 
 /*Style for text inside description*/
 .text{
     margin:1em;
     padding:1em;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 /*style for dd inside dl in chacteristics */
@@ -862,34 +882,32 @@ a:active{
 .Ratings-and-Comments{
     display:flex;
     position:relative;
-    width:80%;
     background-color: #beb9b9;
     border-radius: 17px;
     text-align: center;
-    /*font-family:montserrat;*/
     font-size:large;
     box-sizing: border-box;
-    margin:170px;
+    margin:180px;
     flex-flow:column wrap;
     flex-grow: 1;
-    flex-shrink: 2;
+    flex-shrink: 1;
     grid-column: 2;
     grid-row:2;
+
 }
 #Tech-Support{
     display:flex;
     position:relative;
-    width:80%;
     background-color: #beb9b9;
     border-radius: 17px;
     text-align: center;
-    /*font-family:montserrat;*/
-    font-size:large;
+    font-size:x-large;
     box-sizing: border-box;
-    margin:200px;
+    margin:180px;
     flex-flow:column wrap;
     flex-grow: 1;
-    flex-shrink: 2;
+    flex-shrink: 1;
+    flex-basis: auto;
 }
 
 /*Style for fieldset inside tech support and Ratings section*/
@@ -899,7 +917,6 @@ fieldset{
     border-style:none;
     margin-block-start: 2em;
     margin-inline-end: 2em;
-    font-family: montserrat, arial, verdana;
     padding: 20px 20px;
     box-sizing: border-box;
     width: 80%;
@@ -908,6 +925,7 @@ fieldset{
 
 /*h2 for these sections*/
 #Tech-Support h2,.Ratings-and-Comments h2{
+    position:relative;
     font-weight: 550;
     font-size: 18px;
     padding: 2em;
@@ -936,7 +954,6 @@ input,textarea{
     font-weight: 700;
     border-radius: 12px;
     box-sizing: border-box;
-    font-family: montserrat;
     font-size: 13px;
 }
 
@@ -955,7 +972,7 @@ textarea{
 label{
     display:block;
     font-weight: normal;
-    font-size: 13px;
+    font-size: 15px;
     color: #666;
     
 }
