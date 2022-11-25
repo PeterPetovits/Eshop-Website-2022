@@ -10,10 +10,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel = "stylesheet" href = "style.css">
         <style>
-            .body{
-                text-rendering: optimizeLegibility;
-                scroll-behavior: smooth;
-                font-feature-settings: 'lnum';
+            .html,.body,.main{
+                max-width: 100%;
+                overflow-x: hidden;
             }
         </style>
         
@@ -45,53 +44,17 @@
                             <span class = "presintation">
                                 <span class="heading">
                                     Product Presentation.
-                                  </span>
+                                </span>
                                 <span class = "slide-show">
                                     <span class = "content grid center">
-                                        <figure>    
-                                            <img class="product" src="../assets/apple_macbook_pro_14_m1_pro_8_core_16gb_512gb_macos_2021_space_gray.jpeg" alt="apple_macbook_pro_14_m1_pro_8_core_16gb_512gb_macos_2021_space_gray" height="300" width="300">
+                                        <figure id = "responsive-presentation-image-1">
+                                            <source media="(max-width:669px)" srcset = "../assets/apple-macbook-pro-presentation-responsive-2021-3.jpg">
+                                            <source media="(min-width:670px) and (max-width:1115px)" srcset = "../assets/apple-macbook-pro-14-2021-responsive-2.jpg" >   
+                                            <img class="product" src="../assets/apple-macbook-pro-responsive-image-1.jpg" alt="apple_macbook_pro_14_m1_pro_8_core_16gb_512gb_macos_2021_space_gray" height="450" width="450">
                                         </figure>
                                     </span>
                                 </span>
-                                <span class = "slide">
-                                    <span class = "content grid container">
-                                        <figure>
-                                            <img class="product" src="../assets/apple-macbook-pro-14-2021-2.jpg" alt="display_image_1" height="200" width="200">
-                                        </figure>
-                                    </span>
-                                </span>
-                                <span class = "slide">
-
-                                    <img class="product" src="../assets/apple-macbook-pro-14-2021-3.jpeg" alt="display_image_2" height="200" width="300">    
-                                </span>
-                                <span class = "slide">
-                                    <span class = "content grid container">
-                                        <figure>
-                                            <iframe width="560" height="315" src="https://www.youtube.com/embed/9tobL8U7dQo" title="YouTube video player"></iframe>
-                                        </figure>
-                                    </span>    
-                                </span>
-                                <span class = "counter">
-                                    1 of 4
-                                </span>
-                                <span class = "navigation-product">
-                                    <button id="full-screen" title="Button" class="btn-screen show">
-                                        <i class="fas fa-expand"></i>
-                                    </button>
-                                   
-                                    <button id="small-screen" title="Button" class="btn-screen">
-                                        <i class="fas fa-compress"></i>
-                                    </button>
-                                   
-                                    <button id="left-btn" title="Button" class="btn">
-                                        <i class="fas fa-solid fa-caret-left"></i>
-                                    </button>
-                                   
-                                    <button id="right-btn" title="Button" class="btn">
-                                        <i class="fa-solid fa-caret-right"></i>
-                                    </button>
-      
-                                </span>
+                                
                             
                             </span>
                             
@@ -164,9 +127,10 @@
                         </p>
                     
                     
-                    
-                    <img id="product-analysis_1" src="../assets/analysis-macbook-pro-14-2021.jpeg" alt="analysis_image" height="800" width="1200">
-                    
+                    <picture id="responsive-analysis-1">
+                        <source media = "(max-width:669px)" srcset = "../assets/apple-macbook-analysis-responsive-1.jpg">
+                        <img id="product-analysis_1" src="../assets/analysis-macbook-pro-14-2021.jpeg" alt="analysis_image" height="800" width="1200">
+                    </picture>
                     
                     
                 </span>
@@ -184,8 +148,11 @@
                                 </p>
                             </span>
                             <span class = product-analysis>    
-                                <img id="product-analysis_2" src="../assets/analysis-macbook-apple-pro-14-2021-2.jpeg" alt="analysis_image-1" height="250" width="400">
-                                
+                                <picture id = "responsive-analysis-2">
+                                    <source media = "(max-width:669px)" srcset = "../assets/apple-macbook-pro-14-2021-responsive-speed-analysis-1.jpg">
+                                    <source media = "(min-width:670px) and (max-width:1115px)" srcset = "../assets/analysis-macbook-apple-pro-14-2021-2.jpeg">
+                                    <img id="product-analysis_2" src="../assets/analysis-macbook-apple-pro-14-2021-2.jpeg" alt="analysis_image-1" height="250" width="400">
+                                </picture>
                             </span>
                                 
                             
@@ -203,7 +170,11 @@
                                     </p>
                                 </span>
                                 <span class = "product-analysis">
-                                    <img id="product-analysis_3" src="../assets/analysis-macbook-apple-pro-14-2021-3.jpeg" alt="analysis_image-2" height="350" width="450">
+                                    <picture id = "responsive-analysis-3">
+                                        <source media = "(max-width:669px)" srcset = "../assets/apple-macbook-pro-14-analysis-responsive-screen-1.jpg">
+                                        <source media = "(min-width:670px) and (max-width:1115px)" srcset = "../assets/analysis-macbook-apple-pro-14-2021-3.jpeg"> 
+                                        <img id="product-analysis_3" src="../assets/analysis-macbook-apple-pro-14-2021-3.jpeg" alt="analysis_image-2" height="350" width="450">
+                                    </picture>
                                 </span>
                             
                         </span>
@@ -220,7 +191,11 @@
                                     </p>
                                 </span>
                                 <span class = product-analysis>
-                                    <img id="product-analysis_4" src="../assets/analysis-macbook-apple-pro-14-2021-4.jpeg" alt="analysis_image-3" height="350" width="480">
+                                    <picture id = "responsive-analysis-4">
+                                        <source media = "(max-width:669px)" srcset = "../assets/apple-macbook-pro-14-2021-analysis-responsive-camera-2.jpeg">
+                                        <source media = "(min-width:670px) and (max-width:1115px)" srcset = "../assets/apple-macbook-pro-14-2021-analysis-responsive-camera-1.jpg">
+                                        <img id="product-analysis_4" src="../assets/analysis-macbook-apple-pro-14-2021-4.jpeg" alt="analysis_image-3" height="350" width="480">
+                                    </picture>
                                 </span>
                         </span>
                         <span class = "Product-analysis-5">
@@ -236,7 +211,11 @@
                                     </p>
                                 </span>
                                 <span class = product-analysis>
-                                    <img id="product-analysis_5" src="../assets/analysis-macbook-pro-14-2021-5.jpeg" alt="analysis_image-4" height="350" width="450">
+                                    <picture id = "responsive-analysis-5">
+                                        <source media = "(max-width:669px)" srcset = "../assets/apple-macbook-pro-14-2021-responsive-analysis-sound-1.jpg">
+                                        <source media = "(min-width:670px) and (max-width:1115px)" srcset = "../assets/apple-macbook-pro-14-2021-responsive-analysis-sound-1.jpg">
+                                        <img id="product-analysis_5" src="../assets/analysis-macbook-pro-14-2021-5.jpeg" alt="analysis_image-4" height="350" width="450">
+                                    </picture>        
                                 </span>
                         </span>
                         <span class = "Product-analysis-6">  
@@ -251,7 +230,11 @@
                                     </p>
                                 </span>
                                 <span class = product-analysis>
-                                    <img id="product-analysis_6" src="../assets/analysis-macbook=pro-14-2021-6.jpeg" alt="analysis-image-5" height="350" width="450">
+                                    <picture id = "responsive-analysis-6">
+                                        <source media = "(max-width:669px)" srcset = "../assets/apple-macbook-pro-14-2021-analysis-responsive-connectivity-1.jpg">
+                                        <source media = "(min-width:670px) and (max-width:1115px)" srcset = "../assets/apple-macbook-pro-14-2021-analysis-responsive-connectivity-2.jpg">
+                                        <img id="product-analysis_6" src="../assets/analysis-macbook=pro-14-2021-6.jpeg" alt="analysis-image-5" height="350" width="450">
+                                    </picture>
                                 </span>
                         </span>
                 </span> 
