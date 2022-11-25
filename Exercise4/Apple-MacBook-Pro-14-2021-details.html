@@ -10,9 +10,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel = "stylesheet" href = "style.css">
         <style>
-            .html,.body,.main{
-                max-width: 100%;
-                overflow-x: hidden;
+            .body{
+                text-rendering: optimizeLegibility;
+                scroll-behavior: smooth;
+                font-feature-settings: 'lnum';
             }
         </style>
         
@@ -32,34 +33,23 @@
             </nav>
 
         </header>
-        <main>
+        <main id = "Apple-Product">
           
             <article id="product-info">
                 <h1>Apple MacBook Pro 14" Space Grey MKGP3GR/A Laptop</h1>
                 <section class="apple-macbook-pro-14-2021">
                     
-                     <span class = "Content">
-                        <span id = "presintation-area">
+                    <section class = "Content">
+                    
+                            <figure id = "responsive-presentation-image-1">
+                                <source media="(min-width:350px) and (max-width:650px)" srcset = "../assets/apple-macbook-pro-presentation-responsive-2021-3.jpg">
+                                <source media="(min-width:670px) and (max-width:1115px)" srcset = "../assets/apple-macbook-pro-14-2021-responsive-2.jpg" >   
+                                <img class="product" src="../assets/apple-macbook-pro-responsive-image-1.jpg" alt="apple_macbook_pro_14_m1_pro_8_core_16gb_512gb_macos_2021_space_gray" height="450" width="650">
+                            </figure>            
+                                   
                             
-                            <span class = "presintation">
-                                <span class="heading">
-                                    Product Presentation.
-                                </span>
-                                <span class = "slide-show">
-                                    <span class = "content grid center">
-                                        <figure id = "responsive-presentation-image-1">
-                                            <source media="(max-width:669px)" srcset = "../assets/apple-macbook-pro-presentation-responsive-2021-3.jpg">
-                                            <source media="(min-width:670px) and (max-width:1115px)" srcset = "../assets/apple-macbook-pro-14-2021-responsive-2.jpg" >   
-                                            <img class="product" src="../assets/apple-macbook-pro-responsive-image-1.jpg" alt="apple_macbook_pro_14_m1_pro_8_core_16gb_512gb_macos_2021_space_gray" height="450" width="450">
-                                        </figure>
-                                    </span>
-                                </span>
-                                
-                            
-                            </span>
-                            
-                        </span>
-                    </span>
+                    </section>
+                    
                    
                     
                      
@@ -129,7 +119,7 @@
                     
                     <picture id="responsive-analysis-1">
                         <source media = "(max-width:669px)" srcset = "../assets/apple-macbook-analysis-responsive-1.jpg">
-                        <img id="product-analysis_1" src="../assets/analysis-macbook-pro-14-2021.jpeg" alt="analysis_image" height="800" width="1200">
+                        <img id="product-analysis_1" src="../assets/analysis-macbook-pro-14-2021.jpeg" alt="analysis_image" height="600" width="1000">
                     </picture>
                     
                     
