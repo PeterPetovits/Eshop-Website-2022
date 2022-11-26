@@ -1044,90 +1044,91 @@ a:active{
 /*------------PRODUCT PRESENTATION PAGE------------*/
 /*-------------------------------------------------*/
 #Apple-Product{
-    min-width:auto;
-    overflow: hidden;
-    max-width:auto;
-}
-
-#product-info{          /*style for Article inside main */
-    display: block;
-    text-align: center;
-    align-items: center;
-    grid-row: 2;
+    max-width:100%;
+    min-width: auto;
+    margin:0;
+    padding:0;
+    padding:0;
     position:relative;
-    overflow: hidden;
-    max-width: auto;
-    min-width: auto;
+    
+}
+figure,section{
+    display:block;
 }
 
-#product-info > h1{         /*style for h1 inside article */
-    margin-top: 1em;
-    overflow-wrap: break-word;
-}
-
-/*style for first section inside article */
 .apple-macbook-pro-14-2021{
+    padding:60px 0;
+    margin:0;
+    border-top: 1px solid #e8e8e8;
+    border-right: 0;
+    border-left: 0;
+    border-radius: 0;
+    position:relative;
+    border-bottom: 1px solid #e8e8e8;
+    background-color: #fff;
     display:flex;
-    background-color: white;
-    border-radius: 17px;
-    text-align: center;
-    box-sizing: border-box;
-    max-width: auto;
-    min-width:auto;
-    padding:2em;
-    align-items: center;
+    position:relative;
+    grid-column: 1;
+    grid-row:2;
+}
+.Content{
+    -webkit-box-align: start;
+    align-items: flex-start;
+    padding-top: 64px;
+    display:flex;
+    -webkit-box-flex: 0;
+    flex: 0 0 50%;
+    -webkit-box-pack: center;
     justify-content: center;
-    flex-flow: column wrap;
-    overflow:hidden;
 }
-.Content, Content #responsive-presentation-image{
-    max-width: auto;
-    min-width: auto;
+.Content a:hover{
+    background-color: white;
 }
-/*Style for code and price inner section */
-.code-and-price{
-    display: block;
-    font-size: xx-large;
-    margin:1em;
-    text-align: right;
+.Content .responsive-image-presentation-1{
+    display:flex;
+    -webkit-box-flex: 1;
+    flex: 1;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: sticky;
+    top: 64px;
+    
 }
-
-.code-and-price .code{
-    font-weight: normal;
-    font-size: 13px;
-    color: #666;
-}
-.code-and-price .price{
-    font-weight:bold;
+.Content .responsive-image-presentation-1 .product{
+    display:inline-block;
+    max-width: 330px;
+    max-height: 330px;
 }
 
-/*Style for characteristics and and specifications inner sections respectively*/
-.product-characteristics,.characteristics{
-    display: inline-block;
-    align-items:center;
-    flex-grow: 2;
-    flex-shrink: 2;
-    width: 50%;
+.details{
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    min-height:150px;
+    max-width: 50%;
+    
+}
+.details #Product-title{
+    position:relative;
+    border-top:0;
+   
+}
+details .product-characteristics{
+    margin: 16px 0;
+    border-radius: 12px;
+    border-width: 1px;
+
+}
+.characteristics{
+    text-align: center;
     background-color:rgb(209, 205, 205);
     border-radius: 12px;
     border-width: 1px;
-    text-align: center;
     margin:2em;
-}
-
-/*Style for dl specifications and description headers*/
-.specs,.description{
-    padding:0.5em;
-    margin:1em;
-    position:relative;
-}
-
-/*Style for text inside description*/
-.text{
-    margin:1em;
     padding:1em;
 }
-
 /*style for dd inside dl in chacteristics */
 .specifications dd{
     background-color:rgb(133, 133, 133);
@@ -1143,146 +1144,89 @@ a:active{
     margin:1em;
     border-radius:12px;
 }
+@media screen and (min-width:940px){
+    main,section:not(.apple-macbook-pro-14-2021,.User-Personal-Touch-Area,#User-Comments),.section-title{
+        max-width: 1070px;
+        padding-left: 0;
+        margin:auto;
+    }
+    
+}
+@media screen and (min-width:778px) and (max-width:900px){
+    .User-Personal-Touch-Area .Ratings-and-Comments #User-Comments fieldset input:last-of-type{
+        width:50%;
+    }
+    .User-Personal-Touch-Area .Ratings-and-Comments fieldset #btn_Rate{
+        width:50%;
+    }
+    .User-Personal-Touch-Area .Ratings-and-Comments #User-Comments fieldset #your-name{
+        width:50%;
+    }
+}
 
-/*Style for second analysis section*/
 .apple-macbook-pro-14-2021-analysis{
-    display:flex;
-    flex-flow:column wrap;
-    justify-content: center;
-    position:relative;
-    text-align:center;
-    font:inherit;
-    -webkit-box-direction: normal;
-    box-sizing: border-box;
-    overflow-wrap:break-word;
-    margin:2em;
-}
-
-/*style for analysis */
-.analysis{
+    margin-bottom:80px;
+    grid-column:1;
+    grid-row: 2;
     display:block;
-    overflow:hidden;
+    overflow: visible;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    
 }
-.analysis h2{
-    overflow:hidden;
+.apple-macbook-pro-14-2021-analysis > span{
+    width:100%;
 }
-/*style for first image in analysis*/
-#responsive-analysis-1{
-    overflow:hidden;
+.Product-Features{
+    margin-bottom: 30px;
+    overflow-wrap: break-word;
+    margin:0;
+    padding:0;
+    border:0;
 }
-#product-analysis_1{
-    float:none;
+.Product-Features .info{
+    margin-bottom: 30px;
+    max-width: 800px;
+}
+.Rich-Components{
+    width: 100%;
+    word-break: break-word;
+}
+.Rich-Components{
+    margin-bottom: 50px;
+}
+.Rich-Components .Product-analysis-1-One-Column,.Rich-Components .Product-analysis-2-Two-Column{
+    margin-bottom:50px;
 }
 
-/*style for the rest of the features text-images*/
-.Product-features{
-    display:grid;
-    position:relative;
-    box-sizing: border-box;
-    overflow:visible;
-    column-gap: 30px;
-    row-gap:1em;
-    grid-template-columns: 2fr 2fr;
-    grid-auto-rows: auto;
-    margin-block-start: 3em;
-    margin-block-end: 3em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 40px;
-}
-
-.Product-analysis-2{
+.Rich-Components .Product-analysis-2-Two-Column,.Rich-Components .Product-analysis-2-Two-Column-Reverse{
     display:flex;
-    flex-flow:column wrap;
-    grid-column: 1;
-    grid-row:1;
-    text-align: left;
-    position:relative;
-    justify-self: center;
-    justify-content: center;
+    -webkit-box-align: center;
     align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
 }
-
-.Product-analysis-3{
+.Rich-Components .Product-analysis-2-Two-Column .column{
+    -webkit-box-flex: 0;
+    flex: 0 0 48%;
+}
+.Rich-Components .product-analysis{
+    animation: fadeIn .25s ease-in-out forwards;
+}
+.Rich-Components figure img{
+    width: auto;
+    max-width: 100%;
+    border-radius:8px;
+}
+.Rich-Components .Product-analysis-2-Two-Column-Reverse .column:first-child{
+    -webkit-box-ordinal-group: 3;
+    order: 2;
+}
+.User-Personal-Touch-Area{
     display:flex;
-    flex-flow:column wrap;
-    text-align: left;
-    grid-column: 2;
-    grid-row: 1;
-    position:relative;
-    justify-self:center;
-    justify-content: center;
     align-items: center;
-}
-
-.Product-analysis-4{
-    display:flex;
-    flex-flow:column wrap;
-    text-align: left;
-    grid-column: 1;
-    grid-row: 2;
-    position:relative;
-    justify-self: center;
     justify-content: center;
-    align-items: center;
 }
-
-.Product-analysis-5{
-    display:flex;
-    flex-flow:column wrap;
-    text-align: left;
-    grid-column:2;
-    grid-row: 2;
-    position:relative;
-    justify-self: center;
-    justify-content: center;
-    align-items: center;
-}
-
-.Product-analysis-6{
-    display:flex;
-    flex-flow:column wrap;
-    text-align: left;
-    grid-column: span 2;
-    grid-row:3;
-    position:relative;
-    justify-self: center;
-    justify-content: center;
-    align-items: center;
-}
-
-.product-analysis-text{
-    box-sizing: border-box;
-    margin:0.5em;
-    padding:0.5em;
-}
-
-.Features .product-analysis {
-    position:relative;
-    overflow: hidden;
-}
-
-.Features .product-analysis-text h3{
-    margin-top:3em;
-    flex-grow: 1;
-}
-
-.Features .product-analysis-text p{
-    margin-right:4em;
-    margin-left:4em;
-    overflow: hidden;
-}
-/*
-#product-analysis_3,#product-analysis_5,#product-analysis_6{
-    float:left;
-
-}
-#product-analysis_2,#product-analysis_4{
-    float:right;
-}
-
-*/
-
 /*Style for Tech support and Ratings section */
 .Ratings-and-Comments{
     display:flex;
@@ -1292,55 +1236,23 @@ a:active{
     text-align: center;
     font-size:large;
     box-sizing: border-box;
-    margin:10em;
+    margin:2em;
     flex-flow:column wrap;
-    grid-column: 1;
-    grid-row:1;
+    width:80%;
 
 }
-
-@media screen and (min-width:350px) and (max-width:669px){
-   #product-info{
-        display:grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: minmax(1fr,auto) minmax(1fr,auto) minmax(1fr auto) minmax(1fr,auto);
-       
-    }
-   #product-info > h1{
-        grid-column:1;
-        grid-row:1;
-        justify-self: left;
-        width:30%;
-        margin:0.5em;
-        position:relative;
-   }
-   .apple-macbook-pro-14-2021{
-        grid-column:1;
-        grid-row:2;
-        width:30%;
-        margin:0.5em;
-        position:relative;
-        display:flex;
-        flex-flow:column wrap;
-        align-items:left;
-   }
-   
-   
-   .apple-macbook-pro-14-2021-analysis{
-        grid-column:1;
-        grid-row:3;
-
-   }
-   .Ratings-and-Comments{
-        grid-column:1;
-        grid-row:4;
-        
-   }
+/*We will see*/
+.User-Personal-Touch-Area .Ratings-and-Comments fieldset input:last-of-type{
+    flex-grow: 2;
+}
+.section-title{
+    line-height: 29px;
+    background-color: #f8f8f8;
+    padding: 32px 0;
+    font-weight:600;
+    margin-bottom: 32px;
 }
 
-@media screen and (min-width:670px) and (max-width:1115px){
-    
-}
 #Tech-Support{
     display:flex;
     position:relative;
