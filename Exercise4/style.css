@@ -608,7 +608,7 @@ a:active{
 /*------------------------------------------------------*/
 /*-------------------PRODUCTS---------------------------*/
 /*------------------------------------------------------*/
-/*default style good for small screens*/
+/*default style good for smartphones*/
 /*style for the class products list*/
 .products-list{
     display: grid;
@@ -617,25 +617,17 @@ a:active{
     grid-auto-rows: minmax(50px, auto);
 }
 
-/*also another good default style to display in small screens*/
+/*
+/*also another good default style to display in smartphones
 .products-list{
     display: flex;
     flex-flow: row wrap;
     margin: 0.3125rem;
 }
-
-/*media query for smartphones screens Portrait and Landscape*/
-@media (max-device-width:600px){
-    .products-list{
-        display: grid;
-        margin: 0.3125rem;
-        grid-template-columns: 2fr;
-        grid-auto-rows: minmax(50px, auto);
-    }
-}
+*/
 
 /*media query for tablet screens*/
-@media (min-device-width: 670px) and (max-device-width: 1112px){
+@media screen and (min-width: 670px) and (max-width: 1112px){
     .products-list{
         display: grid;
         margin: 0.3125rem;
@@ -645,7 +637,7 @@ a:active{
 }
 
 /*media query for laptop-pc screens*/
-@media (min-device-width: 1115px){
+@media screen and (min-width: 1115px){
     .products-list{
         display: grid;
         margin: 0.3125rem;
@@ -779,7 +771,7 @@ a:active{
 /*------------------------------------------------------*/
 /*------------------ABOUT US PAGE-----------------------*/
 /*------------------------------------------------------*/
-/*default style for the page to be good for small screens*/
+/*default style for the page to be good for smartphones*/
 /*style for the whole about us main page - article*/
 #creators-bio{
     display: grid;
@@ -787,7 +779,7 @@ a:active{
     grid-auto-rows: minmax(100px, auto);
 }
 
-/*default style for the page to be good for small screens*/
+/*default style for the page to be good for smartphones*/
 /*style for h2 in creators bio*/
 #creators-bio >  h2{
     text-align: center;
@@ -796,7 +788,7 @@ a:active{
     grid-column: 1 / 2;
 }
 
-/*default style for the page to be good for small screens*/
+/*default style for the page to be good for smartphones*/
 /*style to create column like look for developer 1 bio*/
 #developer1{
     display: flex;
@@ -808,7 +800,7 @@ a:active{
     margin: 3px;
 }
 
-/*default style for the page to be good for small screens*/
+/*default style for the page to be good for smartphones*/
 /*style to create column like look for developer 2 bio*/
 #developer2{
     display: flex;
@@ -820,125 +812,46 @@ a:active{
     margin: 3px;
 }
 
-/*default style for the page to be good for small screens*/
+/*default style for the page to be good for smartphones*/
 /*style for h3 up the picture of developer 1*/
 #developer1 > h3{
     text-align: center;
 }
 
-/*default style for the page to be good for small screens*/
+/*default style for the page to be good for smartphones*/
 /*style for h3 up the picture of developer 2*/
 #developer2 > h3{
     text-align: center;
 }
 
-/*default style for the page to be good for small screens*/
+/*default style for the page to be good for smartphones*/
 /*style for developer's 1 image*/
 #developer1 > img{
     margin-left: auto;
     margin-right: auto;
-    width: 200px;
-    height: 200px;
 }
 
-/*default style for the page to be good for small screens*/
+/*default style for the page to be good for smartphones*/
 /*style for developer's 2 image*/
 #developer2 > img{
     margin-left: auto;
     margin-right: auto;
-    width: 200px;
-    height: 200px;
 }
 
-/*default style for the page to be good for small screens*/
+/*default style for the page to be good for smartphones*/
 /*link color for developer*/
 #creators-bio a:link{
     color: red;
 }
 
-/*default style for the page to be good for small screens*/
+/*default style for the page to be good for smartphones*/
 /*link color hover for developer*/
 #creators-bio a:hover{
     background-color: black;
 }
 
-/*media query for smartphones screens Portrait and Landscape*/
-@media (max-device-width:600px){
-    #creators-bio{
-        display: grid;
-        grid-template-columns: 2fr;
-        grid-auto-rows: minmax(100px, auto);
-    }
-
-    /*style for h2 in creators bio*/
-    #creators-bio >  h2{
-        text-align: center;
-        font-size: 2em;
-        grid-row: 1;
-        grid-column: 1 / 2;
-    }
-
-    /*style to create column like look for developer 1 bio*/
-    #developer1{
-        display: flex;
-        flex-direction: column;
-        flex-flow: column;
-        flex-wrap: wrap;
-        grid-row: 2;
-        grid-column: 1;
-        margin: 3px;
-    }
-
-    /*style to create column like look for developer 2 bio*/
-    #developer2{
-        display: flex;
-        flex-direction: column;
-        flex-flow: column;
-        flex-wrap: wrap;
-        grid-row: 3;
-        grid-column: 1;
-        margin: 3px;
-    }
-
-    /*style for h3 up the picture of developer 1*/
-    #developer1 > h3{
-        text-align: center;
-    }
-
-    /*style for h3 up the picture of developer 2*/
-    #developer2 > h3{
-        text-align: center;
-    }
-
-    /*style for developer's 1 image*/
-    #developer1 > img{
-        margin-left: auto;
-        margin-right: auto;
-        width: 200px;
-        height: 200px;
-    }
-
-    /*style for developer's 2 image*/
-    #developer2 > img{
-        margin-left: auto;
-        margin-right: auto;
-        width: 200px;
-        height: 200px;
-    }
-
-    /*link color for developer*/
-    #creators-bio a:link{
-        color: red;
-    }
-
-    /*link color hover for developer*/
-    #creators-bio a:hover{
-        background-color: black;
-    }
-}
-
 /*media query for tablet screens*/
-@media (min-device-width: 670px) and (max-device-width: 1112px){
+@media screen and (min-width: 670px) and (max-width: 1112px){
     #creators-bio{
         display: grid;
         grid-template-columns: 2fr 2fr;
@@ -989,16 +902,12 @@ a:active{
     #developer1 > img{
         margin-left: auto;
         margin-right: auto;
-        width: 200px;
-        height: 200px;
     }
 
     /*style for developer's 2 image*/
     #developer2 > img{
         margin-left: auto;
         margin-right: auto;
-        width: 200px;
-        height: 200px;
     }
 
     /*link color for developer*/
@@ -1013,7 +922,7 @@ a:active{
 }
 
 /*media query for laptop-pc screens*/
-@media (min-device-width: 1115px){
+@media screen and (min-width: 1115px){
     #creators-bio{
         display: grid;
         grid-template-columns: 2fr 2fr 2fr;
@@ -1064,16 +973,12 @@ a:active{
     #developer1 > img{
         margin-left: auto;
         margin-right: auto;
-        width: 200px;
-        height: 200px;
     }
 
     /*style for developer's 2 image*/
     #developer2 > img{
         margin-left: auto;
         margin-right: auto;
-        width: 200px;
-        height: 200px;
     }
 
     /*link color for developer*/
