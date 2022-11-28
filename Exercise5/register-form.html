@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Sign Up | The Easy Tech Eshop</title>
+
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <meta charset='utf-8'>
+        <meta name="description" content="Eshop for tech">
+        <meta name="keywords" content="sign up page, register, tech, eshop, customers">
+        <meta name="author" content="Peter Petovits, Alkiviadis Pouros">
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel = "stylesheet" href = "/Exercise5/style.css">
+    </head>
+
+    <body>
+        <header class="top-header">
+            <h1>The Easy Tech Eshop</h1>
+            <img class="logo" src="../assets/website-logo.png" alt="main website logo" height="100" width="100">
+            <!--navigation menu-->
+            <nav id="navigation-bar">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="./product-categories.html">Products</a></li>
+                    <li><a href="./contact-form.html">Contact Form</a></li>
+                    <li><a href="./about-us.html">About Us</a></li>
+                    <li><a href="./register-form.html">Sign Up</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="register-form">
+            <h2>Sign Up Form</h2>
+
+            <form action="/register-user" method="post" autocomplete="on">
+                <fieldset>
+                    <legend>Personal Details</legend>
+                    <label for="first-name">First name:</label><br>
+                    <input type="text" placeholder="John" id="first-name" name="first-name" pattern="[A-Z]{1} {a-z}" required><br>
+                    <label for="last-name">Last name:</label><br>
+                    <input type="text" placeholder="Papadopoulos" id="last-name" name="last-name" pattern="[A-Z]{1} {a-z}" required><br>
+                    <label for="email">Email:</label><br>
+                    <input type="email" placeholder="info@tech.com" id="email" name="email" required><br>
+                    <label for="home-address">Home Address:</label><br>
+                    <input type="text" list="addresses" placeholder="Patision 1, Athens" id="home-address" name="home-address" pattern="[A-Z]{1} {a-z} [0-9]{3} ,{1} [A-Z]{1} {a-z}" required><br>
+                    <datalist id="addresses">
+                        <option value="Patision 17, Athens">
+                        <option value="Kifiias 20, Marousi">
+                        <option value="Kordiktonos 12, Athens">
+                    </datalist>
+
+                    <label for="postal-codes">Postal Code:</label><br>
+                    <input type="text" list="postal-codes-list" placeholder="14875" id="postal-codes" name="postal-codes" pattern="[0-9]{5}" required><br>
+                    <datalist id="postal-codes-list">
+                        <option value="14568">
+                        <option value="98564">
+                        <option value="58476">
+                    </datalist>
+
+                    <label for="birthday">Birthday:</label><br>
+                    <input type="date" id="birthday" name="birthday" min="1930-12-31" required><br>
+                    <label for="phone">Phone number:</label>
+                    <input type="tel" placeholder="Enter phone number" id="phone" name="phone" pattern="[0-9]{10}">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Payment Methods</legend>
+                    <label for="delivery-address">Delivery Address:</label><br>
+                    <input type="text" list="addresses" placeholder="Patision 1, Athens" id="delivery-address" name="delivery-address" pattern="[A-Z]{1} {a-z} [0-9]{3} ,{1} [A-Z]{1} {a-z}" required><br>
+                    <datalist id="addresses">
+                        <option value="Patision 17, Athens">
+                        <option value="Kifiias 20, Marousi">
+                        <option value="Kordiktonos 12, Athens">
+                    </datalist>
+
+                    <label for="cash">Cash</label>
+                    <input type="radio" id="cash" name="payment" value="Cash" required>
+                    <label for="credit-card">Credit Card</label>
+                    <input type="radio" id="credit-card" name="payment" value="Credit Card" required>
+                    <label for="paypal">Paypal</label>
+                    <input type="radio" id="paypal" name="payment" value="Paypal" required>
+                    <label for="deposit">Bank Deposit</label>
+                    <input type="radio" id="deposit" name="payment" value="Bank Deposit" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Login Details</legend>
+                    <label for="username">Username</label>
+                    <input type="email" placeholder="info@tech.com" id="username" name="username" required>
+
+                    <label for="password">Password</label>
+                    <input type="password" placeholder="Enter Password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                        title="Must contain at least one number and one uppercase and lowercase letter, 
+                        and at least 8 or more characters" minlength="8" required>
+
+                    <label for="password">Password</label>
+                    <input type="password" placeholder="Retype Password" id="password2" name="password2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                        title="Must contain at least one number and one uppercase and lowercase letter, 
+                        and at least 8 or more characters" minlength="8" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>ADs Options</legend>
+                    <label for="ad1">SMS</label>
+                    <input type="checkbox" id="ad1" name="ad1" value="sms" required>
+                    <label for="ad2">Email</label>
+                    <input type="checkbox" id="ad2" name="ad2" value="email" required>
+                    <label for="ad3">Viber</label>
+                    <input type="checkbox" id="ad3" name="ad3" value="viber" required>
+                    <label for="ad4">WhatsApp</label>
+                    <input type="checkbox" id="ad4" name="ad4" value="whatsapp" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Questionnaire</legend>
+                    <label for="q1">How often do you buy from eshops?</label>
+                    <select name="buy-frequency" id="q1" required>
+                        <option value="select">Select an option</option>
+                        <option value="once-week">Once per week</option>
+                        <option value="twice-week">Twice per week</option>
+                        <option value="thrice-week">Thrice per week</option>
+                        <option value="once-month">Once per month</option>
+                        <option value="twice-month">Twice per month</option>
+                        <option value="more">More</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <label for="q2">Preferd payment method:</label>
+                    <select name="preferd-payment" id="q2" required>
+                        <option value="select">Select an option</option>
+                        <option value="cash-q2">Cash</option>
+                        <option value="credit-card-q2">Credit Card</option>
+                        <option value="paypal-q2">Paypal</option>
+                        <option value="deposit-q2">Bank Deposit</option>
+                    </select>
+
+                    <label for="q3">What kind of tech products you usually buy?</label>
+                    <select name="products-q3" id="q3" required>
+                        <option value="select">Select an option</option>
+                        <option value="smartphones-q3">Smartphones</option>
+                        <option value="laptops-q3">Laptops</option>
+                        <option value="consoles-q3">Gaming Consoles</option>
+                        <option value="smartwatches-q3">Smartwatches</option>
+                        <option value="gadgets-q3">Gadgets</option>
+                        <option value="headphones-q3">Headphones</option>
+                    </select>
+
+                    <label for="q4">What is an acceptaple period for deliveries?</label>
+                    <select name="delivery-q4" id="q4" required>
+                        <option value="select">Select an option</option>
+                        <option value="one-day-q4">One Day</option>
+                        <option value="two-days-q4">Two Days</option>
+                        <option value="three-days-q4">Three Days</option>
+                        <option value="more-q4">More</option>
+                        <option value="other-q4">Other</option>
+                    </select>
+
+                    <label for="q5">Do you find ads annoying in your messages?</label>
+                    <select name="ads-q5" id="q5" required>
+                        <option value="select">Select an option</option>
+                        <option value="yes-q5">Yes</option>
+                        <option value="no-q5">No</option>
+                        <option value="so-so-q5">So So</option>
+                        <option value="depends-q5">Dependes per content</option>
+                    </select>
+
+                    <h4>Extra Comments</h4>
+                    <textarea name="extra-comments-q" rows="10" cols="10" maxlength="250"></textarea>
+                </fieldset>
+
+                <input type="submit" value="Sign Up">
+            </form>
+        </main>
+
+        <footer class="page-footer">
+            <ul class="row-footer">
+                <li><a href="https://facebook.com"><img src="../assets/facebook-logo.png" alt="facebook-logo" width="100" height="100"></a></li>
+                <li><a href="https://instagram.com"><img src="../assets/instagram-logo.jpeg" alt="instagram-logo" width="100" height="100"></a></li>
+                <li><a href="https://twitter.com"><img src="../assets/twitter-logo.png" alt="twitter-logo" width="100" height="100"></a></li>
+                <li><img src="../assets/visa-logo.png" alt="visa-logo" width="100" height="100"></li>
+                <li><img src="../assets/mastercard-logo.png" alt="mastercard-logo" width="140" height="100"></li>
+                <li><img src="../assets/paypal-logo.png" alt="paypal-logo" width="100" height="100"></li>
+            </ul>
+            <a href="./contact-form.html">Contact Form</a>
+            <a href="./about-us.html">About Us</a>
+            <p>Copyrights 2022-2023</p>
+        </footer>
+    </body>
+</html>
