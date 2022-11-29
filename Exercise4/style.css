@@ -1145,7 +1145,7 @@ details .product-characteristics{
     border-radius:12px;
 }
 @media screen and (min-width:940px){
-    #Apple-product,section:not(.apple-macbook-pro-14-2021,.User-Personal-Touch-Area,#User-Comments,#main-content),.section-title{
+    #Apple-product,.apple-macbook-pro-14-2021-analysis,.section-title{
         max-width: 1070px;
         padding-left: 0;
         margin:auto;
