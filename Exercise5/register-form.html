@@ -29,10 +29,11 @@
         </header>
 
         <main id="register-form">
-            <h2>Sign Up Form</h2>
+            
 
             <form action="/register-user" method="post" autocomplete="on">
-                <fieldset>
+                <h2>Sign Up Form</h2>
+                <fieldset id = "Personal-info">
                     <legend>Personal Details</legend>
                     <label for="first-name">First name:</label><br>
                     <input type="text" placeholder="John" id="first-name" name="first-name" pattern="[A-Z]{1} {a-z}" required><br>
@@ -62,7 +63,7 @@
                     <input type="tel" placeholder="Enter phone number" id="phone" name="phone" pattern="[0-9]{10}">
                 </fieldset>
 
-                <fieldset>
+                <fieldset id = "Payment-Methods">
                     <legend>Payment Methods</legend>
                     <label for="delivery-address">Delivery Address:</label><br>
                     <input type="text" list="addresses" placeholder="Patision 1, Athens" id="delivery-address" name="delivery-address" pattern="[A-Z]{1} {a-z} [0-9]{3} ,{1} [A-Z]{1} {a-z}" required><br>
@@ -82,7 +83,7 @@
                     <input type="radio" id="deposit" name="payment" value="Bank Deposit" required>
                 </fieldset>
 
-                <fieldset>
+                <fieldset id = "Login-details">
                     <legend>Login Details</legend>
                     <label for="username">Username</label>
                     <input type="email" placeholder="info@tech.com" id="username" name="username" required>
@@ -98,7 +99,7 @@
                         and at least 8 or more characters" minlength="8" required>
                 </fieldset>
 
-                <fieldset>
+                <fieldset id = "ADs-options">
                     <legend>ADs Options</legend>
                     <label for="ad1">SMS</label>
                     <input type="checkbox" id="ad1" name="ad1" value="sms" required>
@@ -110,8 +111,8 @@
                     <input type="checkbox" id="ad4" name="ad4" value="whatsapp" required>
                 </fieldset>
 
-                <fieldset>
-                    <legend>Questionnaire</legend>
+                <fieldset id = "Questionaire">
+                    <legend>Questionaire</legend>
                     <label for="q1">How often do you buy from eshops?</label>
                     <select name="buy-frequency" id="q1" required>
                         <option value="select">Select an option</option>
@@ -124,8 +125,8 @@
                         <option value="other">Other</option>
                     </select>
 
-                    <label for="q2">Preferd payment method:</label>
-                    <select name="preferd-payment" id="q2" required>
+                    <label for="q2">Prefered payment method:</label>
+                    <select name="prefered-payment" id="q2" required>
                         <option value="select">Select an option</option>
                         <option value="cash-q2">Cash</option>
                         <option value="credit-card-q2">Credit Card</option>
@@ -167,7 +168,7 @@
                     <textarea name="extra-comments-q" rows="10" cols="10" maxlength="250"></textarea>
                 </fieldset>
 
-                <input type="submit" value="Sign Up">
+                <input type="submit" value="Sign Up" id = "btn_sub_acc">
             </form>
         </main>
 

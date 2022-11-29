@@ -1441,87 +1441,85 @@ input:focus,textarea:focus{
     }
     
 }
-/*
 @media screen and (min-width:1300px){
-   fieldset{
-        display:grid;
-        grid-template-columns: minmax(2fr,auto) minmax(1fr,auto) minmax(50px,auto);
-        grid-template-rows: repeat(11,1fr);
-        text-align: left;
-        row-gap: 3px;
-   }
-   legend{
-        grid-column:1;
-        grid-row:1;
-   }
-   label:nth-of-type(1){  
-        grid-column:1;
-        grid-row:2;
-        
-   }
-   #your-first-name{
-        grid-column:1;
-        grid-row:3;
-        width:56%
-   }
-   label:nth-of-type(2){
-  
-        grid-column:1;
-        grid-row:4;
-   }
-   #your-last-name{
-        grid-column:1;
-        grid-row:5;
-        width:56%
-   }
-   label:nth-of-type(3){
-        grid-column:1;
-        grid-row:6;
-   }
-   #product-code{
-        grid-column:1;
-        grid-row:7;
-        width:56%
-   }
-   label:nth-of-type(4){
-        grid-column:1;
-        grid-row:8;
-   }
-   #date_of_purchase{
-        grid-column:1;
-        grid-row:9;
-        width:56%
-   }
-   label:nth-of-type(5){
-        grid-column:2;
-        grid-row:1;
-        text-align: center;
-   }
-   #select-file{
-        grid-column:2;
-        grid-row:2;
-        justify-self: center;
-        width: 56%;
-   }
-   label:nth-of-type(6){
-        grid-column:2;
-        grid-row:3;
-        text-align: center;
-   }
-   #your-message{
-        grid-column:2;
-        grid-row:4/7;
-        width:80%;
-        height:90%;
-        justify-self: center;
-   }
-   #btn_submit{
-        grid-column:2;
-        grid-row:8;
-        justify-self: center;
-        height:fit-content;
-        width:54%;
-        font-size: large;
-   }
-}
-*/
+    #Tech-Support fieldset{
+         display:grid;
+         grid-template-columns: minmax(2fr,auto) minmax(1fr,auto) minmax(50px,auto);
+         grid-template-rows: repeat(11,0.3fr);
+         text-align: left;
+         row-gap: 1px;
+    }
+    #Tech-Support fieldset legend{
+         grid-column:1;
+         grid-row:1;
+    }
+    #Tech-Support fieldset label:nth-of-type(1){  
+         grid-column:1;
+         grid-row:2;
+         
+    }
+    #Tech-Support fieldset #your-first-name{
+         grid-column:1;
+         grid-row:3;
+         width:56%
+    }
+    #Tech-Support fieldset label:nth-of-type(2){
+   
+         grid-column:1;
+         grid-row:4;
+    }
+    #Tech-Support fieldset #your-last-name{
+         grid-column:1;
+         grid-row:5;
+         width:56%
+    }
+    #Tech-Support fieldset label:nth-of-type(3){
+         grid-column:1;
+         grid-row:6;
+    }
+    #Tech-Support fieldset #product-code{
+         grid-column:1;
+         grid-row:7;
+         width:56%
+    }
+    #Tech-Support fieldset label:nth-of-type(4){
+         grid-column:1;
+         grid-row:8;
+    }
+    #Tech-Support fieldset #date_of_purchase{
+         grid-column:1;
+         grid-row:9;
+         width:56%
+    }
+    #Tech-Support fieldset label:nth-of-type(5){
+         grid-column:2;
+         grid-row:1;
+         text-align: center;
+    }
+    #Tech-Support fieldset #select-file{
+         grid-column:2;
+         grid-row:2;
+         justify-self: center;
+         width: 56%;
+    }
+    #Tech-Support fieldset label:nth-of-type(6){
+         grid-column:2;
+         grid-row:3;
+         text-align: center;
+    }
+    #Tech-Support fieldset #your-message{
+         grid-column:2;
+         grid-row:4/7;
+         width:80%;
+         height:90%;
+         justify-self: center;
+    }
+    #Tech-Support fieldset #btn_submit{
+         grid-column:2;
+         grid-row:8;
+         justify-self: center;
+         height:54%;
+         width:54%;
+         font-size: large;
+    }
+ }
