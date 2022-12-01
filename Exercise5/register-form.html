@@ -10,6 +10,7 @@
         <meta name="author" content="Peter Petovits, Alkiviadis Pouros">
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <link rel = "stylesheet" href = "/Exercise5/style.css">
+        <script src="/Exercise5/validator.js"></script>
     </head>
 
     <body>
@@ -36,14 +37,14 @@
                 <fieldset id = "Personal-info">
                     <legend>Personal Details</legend>
                     <label for="first-name">First name:</label><br>
-                    <input type="text" placeholder="John" id="first-name" name="first-name" pattern="[A-Z]{1} {a-z}" required><br>
+                    <input type="text" placeholder="John" id="first-name" name="first-name" pattern="[A-Z]{1}[a-z]*" required><br>
                     <label for="last-name">Last name:</label><br>
-                    <input type="text" placeholder="Papadopoulos" id="last-name" name="last-name" pattern="[A-Z]{1} {a-z}" required><br>
+                    <input type="text" placeholder="Papadopoulos" id="last-name" name="last-name" pattern="[A-Z]{1}[a-z]*" required><br>
                     <label for="email">Email:</label><br>
                     <input type="email" placeholder="info@tech.com" id="email" name="email" required><br>
                     <label for="home-address">Home Address:</label><br>
-                    <input type="text" list="addresses" placeholder="Patision 1, Athens" id="home-address" name="home-address" pattern="[A-Z]{1} {a-z} [0-9]{3} ,{1} [A-Z]{1} {a-z}" required><br>
-                    <datalist id="addresses">
+                    <input type="text" list="addresses1" placeholder="Patision 1, Athens" id="home-address" name="home-address" pattern="[A-Z]{1}[a-z]* [0-9]*,{1} [A-Z]{1}[a-z]*" required><br>
+                    <datalist id="addresses1">
                         <option value="Patision 17, Athens">
                         <option value="Kifiias 20, Marousi">
                         <option value="Kordiktonos 12, Athens">
@@ -66,8 +67,8 @@
                 <fieldset id = "Payment-Methods">
                     <legend>Payment Methods</legend>
                     <label for="delivery-address">Delivery Address:</label><br>
-                    <input type="text" list="addresses" placeholder="Patision 1, Athens" id="delivery-address" name="delivery-address" pattern="[A-Z]{1} {a-z} [0-9]{3} ,{1} [A-Z]{1} {a-z}" required><br>
-                    <datalist id="addresses">
+                    <input type="text" list="addresses2" placeholder="Patision 1, Athens" id="delivery-address" name="delivery-address" pattern="[A-Z]{1}[a-z]* [0-9]*,{1} [A-Z]{1}[a-z]*" required><br>
+                    <datalist id="addresses2">
                         <option value="Patision 17, Athens">
                         <option value="Kifiias 20, Marousi">
                         <option value="Kordiktonos 12, Athens">
@@ -102,19 +103,19 @@
                 <fieldset id = "ADs-options">
                     <legend>ADs Options</legend>
                     <label for="ad1">SMS</label>
-                    <input type="checkbox" id="ad1" name="ad1" value="sms" required>
+                    <input type="checkbox" id="ad1" name="ad" value="sms">
                     <label for="ad2">Email</label>
-                    <input type="checkbox" id="ad2" name="ad2" value="email" required>
+                    <input type="checkbox" id="ad2" name="ad" value="email">
                     <label for="ad3">Viber</label>
-                    <input type="checkbox" id="ad3" name="ad3" value="viber" required>
+                    <input type="checkbox" id="ad3" name="ad" value="viber">
                     <label for="ad4">WhatsApp</label>
-                    <input type="checkbox" id="ad4" name="ad4" value="whatsapp" required>
+                    <input type="checkbox" id="ad4" name="ad" value="whatsapp">
                 </fieldset>
 
                 <fieldset id = "Questionaire">
                     <legend>Questionaire</legend>
                     <label for="q1">How often do you buy from eshops?</label>
-                    <select name="buy-frequency" id="q1" required>
+                    <select name="buy-frequency" id="q1">
                         <option value="select">Select an option</option>
                         <option value="once-week">Once per week</option>
                         <option value="twice-week">Twice per week</option>
@@ -126,7 +127,7 @@
                     </select>
 
                     <label for="q2">Prefered payment method:</label>
-                    <select name="prefered-payment" id="q2" required>
+                    <select name="prefered-payment" id="q2">
                         <option value="select">Select an option</option>
                         <option value="cash-q2">Cash</option>
                         <option value="credit-card-q2">Credit Card</option>
@@ -135,7 +136,7 @@
                     </select>
 
                     <label for="q3">What kind of tech products you usually buy?</label>
-                    <select name="products-q3" id="q3" required>
+                    <select name="products-q3" id="q3">
                         <option value="select">Select an option</option>
                         <option value="smartphones-q3">Smartphones</option>
                         <option value="laptops-q3">Laptops</option>
@@ -146,7 +147,7 @@
                     </select>
 
                     <label for="q4">What is an acceptaple period for deliveries?</label>
-                    <select name="delivery-q4" id="q4" required>
+                    <select name="delivery-q4" id="q4">
                         <option value="select">Select an option</option>
                         <option value="one-day-q4">One Day</option>
                         <option value="two-days-q4">Two Days</option>
@@ -156,7 +157,7 @@
                     </select>
 
                     <label for="q5">Do you find ads annoying in your messages?</label>
-                    <select name="ads-q5" id="q5" required>
+                    <select name="ads-q5" id="q5">
                         <option value="select">Select an option</option>
                         <option value="yes-q5">Yes</option>
                         <option value="no-q5">No</option>
