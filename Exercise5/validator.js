@@ -2,7 +2,7 @@
 window.addEventListener('load', function(){
 
     const email = this.document.getElementById('email')
-
+    console.log("testing")
     email.oninput = function(){
         if(!email.checkValidity()){
             email.setCustomValidity('Please provide the correct email format')

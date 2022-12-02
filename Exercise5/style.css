@@ -1642,6 +1642,9 @@ input:focus,textarea:focus{
         justify-self: center;
         width:fit-content;
     }
+    #Personal-info legend{
+        margin:0.3em;
+    }
     #Payment-Methods{
         grid-column:1;
         grid-row:3;
@@ -1652,6 +1655,9 @@ input:focus,textarea:focus{
         box-sizing: border-box;
         width:fit-content;
         justify-self: center;
+    }
+    #Payment-Methods legend{
+        margin:0.3em;
     }
     #Login-details{
         grid-column:1;
@@ -1664,6 +1670,9 @@ input:focus,textarea:focus{
         width:fit-content;
         justify-self: center;
     }
+    #Login-details legend{
+        margin:0.3em;
+    }
     #ADs-options{
         display:flex;
         flex-flow: column wrap;
@@ -1674,6 +1683,9 @@ input:focus,textarea:focus{
         grid-row:5;
         width:fit-content;
         justify-self: center;
+    }
+    #ADs-options legend{
+        margin:0.3em;
     }
     #Questionaire{
         display:flex;
@@ -1686,6 +1698,9 @@ input:focus,textarea:focus{
         text-align: center;
         justify-self: center;
         width:fit-content;
+    }
+    #Questionaire legend{
+        margin:0.3em;
     }
     #Questionaire label,#Questionaire textarea{
         margin:0.5em;
