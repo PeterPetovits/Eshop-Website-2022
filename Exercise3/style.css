@@ -1,3 +1,4 @@
+/*the same fonr family for the entire website*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 /*style for body for all webpages*/
 body{
@@ -11,6 +12,7 @@ body{
     font-family: 'Montserrat';
     font-weight: 700;
 }
+/*we had a problem with the font face css block code*/
 /*
 @font-face { 
     font-family: 'Montserrat';
@@ -240,7 +242,7 @@ a:active{
     flex-shrink: 0;         /*header and navigation menu cannot shrink*/
     flex-grow:0;            /*header and navigation menu cannot grow*/
 }
-
+/*navigation chategories bar section style and positioning */
 #navigation-categories-bar{
     display:inline-block;
     align-items: center;
@@ -512,6 +514,18 @@ a:active{
 /*------------PRODUCT PRESENTATION PAGE------------*/
 /*-------------------------------------------------*/
 
+/*Attempted to do presentation slides but didn't follow through with this idea*/
+/*Styling for main to avoid overflow*/
+#Apple-Product{
+    max-width:100%;
+    min-width: auto;
+    margin:0;
+    padding:0;
+    padding:0;
+    position:relative;
+    
+}
+
 
 #product-info{          /*style for Article inside main */
     display: block;
@@ -542,7 +556,7 @@ a:active{
     justify-content: center;
     flex-flow: column wrap;
 }
-/*Preparing a presintation slide*/
+
 /*Section content style*/
 
 .Content{
@@ -559,7 +573,6 @@ a:active{
     width: fit-content;
     height: fit-content;
     position:relative;
-    /*background:purple;*/
 }
 
 /* Styling all three spans */
@@ -574,13 +587,7 @@ a:active{
     bottom: -45px;
     right: 0;
   }
-  #presentation-area .counter{
-    position: absolute;
-    bottom: -30px;
-    left: 0;
-    color: #b6b6b6;
-  }
-  /* On full screen mode */
+  /* On full screen mode styling these are the defaults */
 #presentation-area.full-screen {
     width: 100%;
     height: 100%;
@@ -596,76 +603,27 @@ a:active{
     bottom: 15px;
     right: 15px;
   }
-  #presentation-area.full-screen .navigation .btn:hover{
-    background: #201e1e;
-    color: #ffffff;
-  }
-  #presentation-area.full-screen .navigation .btn-screen:hover {
-    background: #201e1e;
-  }
    
-  /* End full screen mode */
-
-  /*Buttons
-  .navigation-product button {
-    width: 30px;
-    height: 30px;
-    border: none;
-    outline: none;
-    margin-left: 0.5rem;
-    font-size: 1.5rem;
-    line-height: 30px;
-    text-align: center;
-    cursor: pointer;
-    display:inline-block;
-  }
-  .navigation-product .btn {
-    background: #7e7a7a;
-    color: #ffffff;
-    border-radius: 0.25rem;
-    opacity: 0;
-    transform: scale(0);
-  }
-  .navigation-product .btn.show {
-    opacity: 1;
-    transform: scale(1);
-    visibility: visible;
-  }
-   
-  .navigation-product .btn-screen {
-    background: transparent;
-    color: #b6b6b6;
-    visibility: hidden;
-  }
-   
-  .btn-screen.show {
-    opacity: 1;
-    transform: scale(1);
-    visibility: visible;
-  }
-   
-  .btn-screen.hover {
-    color: #ffffff;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
-  }
-   End Buttons */
-  /* content */
+  
+  /* content styling */
 .presentation .content {
     padding: 2em;
     width: 100%;
     height: calc(100% - 100px);
     z-index: 11;
   }
+  /*grid container for each supposed slide*/
   .presentation .content.grid.center{
     display:grid;
   }
-  .content img, .content iframe{
+  .content img{
     box-sizing: border-box;
     height:300px;
     width:300px;
 }
 .content iframe{
-    height:500px;
+    box-sizing: border-box;
+    height:400px;
     width:500px;
 }
 /* End Content Stylesheet */
@@ -679,7 +637,6 @@ a:active{
     background: #ffffff;
     opacity: 0;
     transform: scale(0);
-    /*visibility: none;*/
   }
   .slide.show {
     opacity: 1;
@@ -688,7 +645,6 @@ a:active{
   }
   .slide .heading{
     padding: 2rem;
-    /*background: purple;*/
     font-size: 2em;
     font-weight: bold;
     color: #ffffff;
@@ -779,8 +735,9 @@ a:active{
 #product-analysis_1{
     float:none;
 }
-
+/*this is also changed in exercise 4 due to overflowing content*/
 /*style for the rest of the features text-images*/
+/*the outer section is a grid container with 2 columns and default rows and the inner ones are flexboxes */
 .Product-features{
     display:grid;
     position:relative;
@@ -796,7 +753,7 @@ a:active{
     margin-inline-end: 0px;
     padding-inline-start: 40px;
 }
-
+/*style each grid item as a flexbox with column wrap flow*/
 .Product-analysis-2{
     display:flex;
     flex-flow:column wrap;
@@ -878,16 +835,6 @@ a:active{
     margin-left:4em;
     overflow: hidden;
 }
-/*
-#product-analysis_3,#product-analysis_5,#product-analysis_6{
-    float:left;
-
-}
-#product-analysis_2,#product-analysis_4{
-    float:right;
-}
-
-*/
 
 /*Style for Tech support and Ratings section */
 .Ratings-and-Comments{
@@ -906,6 +853,7 @@ a:active{
     grid-row:2;
 
 }
+/*style for tech support as a flexbox*/
 #Tech-Support{
     display:flex;
     position:relative;
