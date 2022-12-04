@@ -47,7 +47,7 @@ a{
 .top-header{
     grid-column: 1 / 4;
     grid-row: 1 / 2;
-    background-image: url(/assets/background_image_4.jpg);      /* top-header with background image*/
+    background-image: url(../assets/background_image_4.jpg);      /* top-header with background image*/
     text-align: center;
     
 }
@@ -465,7 +465,7 @@ a:active{
 /*----------------------FOOTER AREA-----------------------------*/
 /*style for footer*/
 .page-footer{
-    background-image: url(/assets/background_image_4.jpg);
+    background-image: url(../assets/background_image_4.jpg);
     padding-right: 0.625rem;
     padding-right: 0.625rem;
     padding-left: 0.625rem;
