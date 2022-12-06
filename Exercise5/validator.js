@@ -9,6 +9,7 @@ window.addEventListener('load', function(){
             email.style.borderColor = "red";
         }else{
             email.setCustomValidity('')
+            email.style.borderColor = "green";
         }
     }
 })
@@ -24,6 +25,7 @@ window.addEventListener('load', function(){
             homeAdress.style.borderColor = "red";
         }else{
             homeAdress.setCustomValidity('')
+            homeAdress.style.borderColor = "green";
         }
     }
 })
@@ -43,6 +45,7 @@ window.addEventListener('load', function(){
             birthday.style.borderColor = "red";
         }else{
             birthday.setCustomValidity('')
+            birthday.style.borderColor = "green";
         }
     })
 })
@@ -117,6 +120,11 @@ window.addEventListener('load', function(){
                 q3.style.borderColor = "red";
             }else{
                 q1.setCustomValidity('')
+                q1.style.borderColor = "green";
+                q2.style.borderColor = "green";
+                q3.style.borderColor = "green";
+                q4.style.borderColor = "green";
+                q5.style.borderColor = "green";
             }
         }else{
             q1.setCustomValidity('Please do not skip it')
