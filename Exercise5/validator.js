@@ -53,7 +53,7 @@ window.addEventListener('load', function(){
     const pass1 = this.document.getElementById('password')
     const pass2 = this.document.getElementById('password2')
 
-    pass2.onchange = function(){
+    pass2.oninput = function(){
         if(pass1.value === pass2.value){
             pass2.setCustomValidity('')
             pass2.style.borderColor = "green";
