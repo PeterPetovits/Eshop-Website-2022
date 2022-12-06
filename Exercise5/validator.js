@@ -6,6 +6,7 @@ window.addEventListener('load', function(){
     email.oninput = function(){
         if(email.validity.typeMismatch){
             email.setCustomValidity('Please provide the correct email format')
+            email.style.borderColor = "red";
         }else{
             email.setCustomValidity('')
         }
@@ -20,6 +21,7 @@ window.addEventListener('load', function(){
     homeAdress.oninput = function(){
         if(homeAdress.validity.patternMismatch){
             homeAdress.setCustomValidity('incorrect address')
+            homeAdress.style.borderColor = "red";
         }else{
             homeAdress.setCustomValidity('')
         }
@@ -38,6 +40,7 @@ window.addEventListener('load', function(){
         
         if(currentYear - dates[0] < 18){
             birthday.setCustomValidity('Under 18 not allowed to sign up')
+            birthday.style.borderColor = "red";
         }else{
             birthday.setCustomValidity('')
         }
@@ -50,13 +53,16 @@ window.addEventListener('load', function(){
     const pass1 = this.document.getElementById('password')
     const pass2 = this.document.getElementById('password2')
 
-    pass2.oninput = function(){
+    pass2.onchange = function(){
         if(pass1.value === pass2.value){
             pass2.setCustomValidity('')
+            pass2.style.borderColor = "green";
         }else{
             pass2.setCustomValidity('Please type the same password as above')
+            pass2.style.borderColor = "red";
         }
     }
+    
 })
 
 //check if the user has checked at least one checkbox
@@ -102,13 +108,23 @@ window.addEventListener('load', function(){
         if(selectedValueQ1 !== "select"){
             if(selectedValueQ2 == "select" && selectedValueQ3 == "select"){
                 q1.setCustomValidity('If question 1 is selected please answer questions 2 and 3 as well')
+                q1.style.borderColor = "red";
+                q2.style.borderColor = "red";
+                q3.style.borderColor = "red";
             }else if(selectedValueQ2 == "select" || selectedValueQ3 == "select"){
                 q1.setCustomValidity('If question 1 is selected please answer questions 2 and 3 as well')
+                q2.style.borderColor = "red";
+                q3.style.borderColor = "red";
             }else{
                 q1.setCustomValidity('')
             }
         }else{
             q1.setCustomValidity('Please do not skip it')
+            q1.style.borderColor = "red";
+            q2.style.borderColor = "red";
+            q3.style.borderColor = "red";
+            q4.style.borderColor = "red";
+            q5.style.borderColor = "red";
         }
     })
 })
