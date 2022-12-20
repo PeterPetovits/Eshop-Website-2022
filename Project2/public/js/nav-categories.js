@@ -5,8 +5,6 @@ window.onload = function(){
 
     let compiledTemplate = Handlebars.compile(categoriesTemplate);
 
-    console.log(compiledTemplate)
-
     let myHeaders = new Headers();
     myHeaders.append('Accept', 'application/json');
 

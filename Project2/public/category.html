@@ -8,10 +8,7 @@
         
     </head>
     <body>
-
-
         <div id="multi-items"></div>
-    
     </body>
     
     
@@ -21,12 +18,11 @@
         <ul id="products">
             {{#each this}}
                 <li>
-                    {{this.title}}
-                    {{this.description}}
-                    {{this.cost}}
-                    <img src="{{this.img_url}}">
+                    {{this.title}}<br>
+                    {{this.description}}<br>
+                    {{this.cost}}<br>
+                    <img src="{{this.image}}"><br>
                 </li>
-
             {{/each}}
         </ul>
     </script>

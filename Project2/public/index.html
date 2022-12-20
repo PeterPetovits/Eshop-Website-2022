@@ -8,10 +8,7 @@
         
     </head>
     <body>
-
-
         <div id="multi-items"></div>
-        
     </body>
 
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
@@ -21,7 +18,7 @@
             {{#each this}}
                 <li>
                     {{this.title}}
-                    <a href="product-categories.html?id" target="_blank">   <!--/category.html?categoryId=1-->
+                    <a href="category.html?categoryId={{this.id}}" target="_blank">   <!--/category.html?categoryId=1-->
                         <img src="{{this.img_url}}">
                     </a>
                 </li>
