@@ -8,6 +8,10 @@
         
     </head>
     <body>
+        <aside id="aside-category-menu">
+            <div id="aside-subcategory-menu"></div>
+        </aside>
+        
         <div id="multi-items"></div>
     </body>
     
@@ -25,6 +29,18 @@
                 </li>
             {{/each}}
         </ul>
+    </script>
+
+    <script id="subcategories-aside-menu" type="text/x-handlebars-template">
+        <p>Πατήστε το σύνδεσμο για φιλτράρισμα των προϊόντων ανάλογα με την 
+            υπο-κατηγορία τους.
+        </p>
+        <label for="all">Όλα</label>
+        <input type="radio" id="all" name="category-titles" value="Όλα" checked><br>
+        {{#each this}}
+            <label for="{{this.id}}">{{this.title}}</label>
+            <input type="radio" id="{{this.id}}" name="category-titles" value="{{this.title}}" data-test="{{this.category_id}}"><br>
+        {{/each}}
     </script>
     
     <script src="./js/nav-products.js"></script>
