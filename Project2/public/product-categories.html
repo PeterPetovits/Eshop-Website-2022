@@ -11,25 +11,24 @@
 
 
         <div id="multi-items"></div>
-        
+    
     </body>
-
+    
+    
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
-    <script id="product-categories-template" type="text/x-handlebars-template">
-        <ul id="categories">
+    <script id="products-template" type="text/x-handlebars-template">
+        <ul id="products">
             {{#each this}}
                 <li>
                     {{this.title}}
-                    <a href="product-categories.html?id" target="_blank">   <!--/category.html?categoryId=1-->
-                        <img src="{{this.img_url}}">
-                    </a>
+                    {{this.description}}
+                    {{this.cost}}
+                    <img src="{{this.img_url}}">
                 </li>
+
             {{/each}}
         </ul>
     </script>
-
     
-    <script src="./js/nav-categories.js"></script>
-    
-</html>
+    <script src="./js/nav-products.js"></script>
