@@ -36,10 +36,10 @@
             υπο-κατηγορία τους.
         </p>
         <label for="all">Όλα</label>
-        <input type="radio" id="all" name="category-titles" value="Όλα" checked><br>
+        <input type="radio" id="all" name="categories-titles" value="Όλα" data-category-id="all" checked><br>
         {{#each this}}
             <label for="{{this.id}}">{{this.title}}</label>
-            <input type="radio" id="{{this.id}}" name="category-titles" value="{{this.title}}" data-test="{{this.category_id}}"><br>
+            <input type="radio" id="{{this.id}}" name="categories-titles" value="{{this.title}}" data-category-id="{{this.id}}"><br>
         {{/each}}
     </script>
     

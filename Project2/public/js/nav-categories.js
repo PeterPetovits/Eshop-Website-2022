@@ -1,8 +1,6 @@
 window.onload = function(){
     let categoriesTemplate = document.getElementById("product-categories-template").innerHTML;
 
-    console.log(categoriesTemplate)
-
     let compiledTemplate = Handlebars.compile(categoriesTemplate);
 
     let myHeaders = new Headers();
