@@ -3,7 +3,7 @@
 /*style for body for all webpages*/
 body{
     background: #f1f1f1;
-    color: #000;                /* body background color*/
+    color: #000;                
     -webkit-text-size-adjust: 100%; 
     -webkit-font-smoothing: antialiased;
     display: grid;

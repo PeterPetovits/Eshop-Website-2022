@@ -5,42 +5,84 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        
+        <link rel="stylesheet" href="./css/style.css">
     </head>
     <body>
-        <aside id="aside-category-menu">
-            <div id="aside-subcategory-menu"></div>
-        </aside>
+
+        <header class="top-header">
+            <h1>The Easy Tech Eshop</h1>
+            <img class="logo" src="./assets/website-logo.png" alt="main website logo" height="100" width="100">
         
-        <div id="multi-items"></div>
+        </header>
+
+        <main>
+            <aside id="aside-category-menu">
+                <div id="aside-subcategory-menu"></div>
+            </aside>
+            
+            <div id="multi-items"></div>
+        </main>
+        <footer class="page-footer">
+            <ul class="row-footer">
+                <li><a href="https://facebook.com"><img src="./assets/facebook-logo.png" alt="facebook-logo" width="100" height="100"></a></li>
+                <li><a href="https://instagram.com"><img src="./assets/instagram-logo.jpeg" alt="instagram-logo" width="100" height="100"></a></li>
+                <li><a href="https://twitter.com"><img src="./assets/twitter-logo.png" alt="twitter-logo" width="100" height="100"></a></li>
+                <li><img src="./assets/visa-logo.png" alt="visa-logo" width="100" height="100"></li>
+                <li><img src="./assets/mastercard-logo.png" alt="mastercard-logo" width="140" height="100"></li>
+                <li><img src="./assets/paypal-logo.png" alt="paypal-logo" width="100" height="100"></li>
+            </ul>
+            <p>Copyrights 2022-2023</p>
+        </footer>
+    
     </body>
     
-    
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
-    <script id="products-template" type="text/x-handlebars-template">
-        <ul id="products">
-            {{#each this}}
-                <li>
-                    {{this.title}}<br>
-                    {{this.description}}<br>
-                    {{this.cost}}<br>
-                    <img src="{{this.image}}"><br>
-                </li>
-            {{/each}}
-        </ul>
-    </script>
+        <script id="products-template" type="text/x-handlebars-template">
+            <ul id="product">
+                {{#each this}}
+                    <li>
+                        <div id="products">
+                            <div id="product-inner-box">
+                                <div id="product-inner-box-top-part">
+                                    <div id="title">
+                                        {{this.title}}<br>
+                                    </div>
+                                    <div id="description">
+                                        {{this.description}}<br>
+                                    </div>
+                                    <div id="price">
+                                        <p>Price: {{this.cost}}.00 $</p>
+                                    </div>
+                                </div>
+                                    <div id="image">
+                                        <img src="{{this.image}}"><br>
+                                    </div>
+                                
+                            </div>
+                        </div>
+                    </li>
+                {{/each}}
+            </ul>
+        </script>
 
-    <script id="subcategories-aside-menu" type="text/x-handlebars-template">
-        <p>Πατήστε το σύνδεσμο για φιλτράρισμα των προϊόντων ανάλογα με την 
-            υπο-κατηγορία τους.
-        </p>
-        <label for="all">Όλα</label>
-        <input type="radio" id="all" name="categories-titles" value="Όλα" data-category-id="all" checked><br>
-        {{#each this}}
-            <label for="{{this.id}}">{{this.title}}</label>
-            <input type="radio" id="{{this.id}}" name="categories-titles" value="{{this.title}}" data-category-id="{{this.id}}"><br>
-        {{/each}}
-    </script>
-    
-    <script src="./js/nav-products.js"></script>
+        <script id="subcategories-aside-menu" type="text/x-handlebars-template">
+            <div id="filter-wrapper">
+                <div id="top-part">
+                    <p>Πατήστε το σύνδεσμο για φιλτράρισμα των προϊόντων ανάλογα με την 
+                        υπο-κατηγορία τους.
+                    </p>
+                </div>
+                <div id="bottom-part">
+                    <label for="all"><p>Όλα</p></label>
+                    <input type="radio" id="all" name="categories-titles" value="Όλα" data-category-id="all" checked><br>
+                    {{#each this}}
+                        <label for="{{this.id}}">{{this.title}}</label>
+                        <input type="radio" id="{{this.id}}" name="categories-titles" value="{{this.title}}" data-category-id="{{this.id}}"><br>
+                    {{/each}}
+                </div>
+            </div>
+        </script>
+        <script src="./js/nav-products.js"></script>
+       
+</html>

@@ -5,26 +5,57 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+        <link rel="stylesheet" href="./css/style.css">
         
     </head>
     <body>
+        <header class="top-header">
+            <h1>The Easy Tech Eshop</h1>
+            <img class="logo" src="./assets/website-logo.png" alt="main website logo" height="100" width="100">
+        
+        </header>
+        
         <div id="multi-items"></div>
-    </body>
 
+
+
+
+        <footer class="page-footer">
+            <ul class="row-footer">
+                <li><a href="https://facebook.com"><img src="./assets/facebook-logo.png" alt="facebook-logo" width="100" height="100"></a></li>
+                <li><a href="https://instagram.com"><img src="./assets/instagram-logo.jpeg" alt="instagram-logo" width="100" height="100"></a></li>
+                <li><a href="https://twitter.com"><img src="./assets/twitter-logo.png" alt="twitter-logo" width="100" height="100"></a></li>
+                <li><img src="./assets/visa-logo.png" alt="visa-logo" width="100" height="100"></li>
+                <li><img src="./assets/mastercard-logo.png" alt="mastercard-logo" width="140" height="100"></li>
+                <li><img src="./assets/paypal-logo.png" alt="paypal-logo" width="100" height="100"></li>
+            </ul>
+            <p>Copyrights 2022-2023</p>
+        </footer>
+    </body>
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
     <script id="product-categories-template" type="text/x-handlebars-template">
         <ul id="categories">
             {{#each this}}
                 <li>
-                    {{this.title}}
-                    <a href="category.html?categoryId={{this.id}}" target="_blank">   <!--/category.html?categoryId=1-->
-                        <img src="{{this.img_url}}">
-                    </a>
+                    <div id="products">
+                        <div id="products-inner-box">
+                            <div id="products-inner-item-top-part">
+                                <div id="title">    
+                                    {{this.title}}
+                                </div>
+                            </div>
+                            <div id="category-image">
+                                <a href="category.html?categoryId={{this.id}}" target="_blank">   
+                                    <img src="{{this.img_url}}">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </li>
             {{/each}}
         </ul>
-    </script>
+    </script>    
 
     
     <script src="./js/nav-categories.js"></script>

@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+body{
+    background: #f1f1f1;
+    color: #000;                
+    -webkit-text-size-adjust: 100%; 
+    -webkit-font-smoothing: antialiased;
+    display: grid;
+    grid-template-columns: 2fr;
+    grid-auto-rows: minmax(350px, auto);
+    font-family: 'Montserrat';
+    font-weight: 700;
+    
+}
+p{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+main{
+    max-width:100%;
+    min-width: auto;
+    margin:0;
+    padding:0;
+    padding:0;
+    position:relative;
+}
+
+*:before,*:after{
+    box-sizing: border-box;
+}
+.top-header{
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+    background-image: url(../assets/background_image_4.jpg);      /* top-header with background image*/
+    text-align: center;
+}
+
+.top-header > h1{
+    color:rgb(2, 2, 2);
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 5px red; /*The header text shadow*/
+    font-size:3em;
+    font-weight:bolder;
+}
+
+
+.page-footer{
+    background-image: url(../assets/background_image_4.jpg);
+    padding-right: 0.625rem;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    -ms-flex-align: center;
+    align-items: center;
+    grid-column: 1 / 4;
+    grid-row: 3 / 4;
+}
+
+.row-footer{
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: center;
+   list-style: none;
+   margin-left: auto;  
+   margin-right: auto;
+}
+
+
+.page-footer > p{
+    color: white;
+}
+
+.page-footer a{
+    text-decoration: none;
+    border-radius: 17px;
+    max-width: 100%;
+}
+
+.row-footer > li{
+    margin: 3px;
+}
+
+
+
+#multi-items{
+    display: grid;
+    margin: 0.3125rem;
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(50px, auto);
+}
+
+#multi-items li{
+    margin: 0.3125rem;
+    padding: 0;
+    list-style: none;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.3125rem;
+}
+
+#multi-items #products-categories{
+    background-color: #f1f1f1;
+    padding: 1.25rem;
+    border-radius: 0.3125rem;
+    position: relative;
+}
+
+#multi-items #products:hover{
+    box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+}
+#multi-items #products #products-inner-box{
+    height: 100%;
+    flex-direction: column;
+    display: flex;
+    overflow: visible;
+    position: relative;
+    justify-content: flex-end;
+}
+
+#multi-items #products #products-inner-box-top-part{
+    flex-grow:1;
+    margin:0.5em;
+}
+#multi-items #products #category-image{
+    position:relative;
+}
+#multi-items #products #category-image img{
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto 1.25rem 1em;
+    width: 50%;
+    background-color: #f9f9f9;
+}
+
+#multi-items #products #title{
+    text-align: left;
+    word-break: break-word;
+    margin-top: 0.9775rem;
+    margin-bottom: 0.5em;
+    max-height: 1.5rem;
+    overflow: hidden;
+    margin-left: 1em;
+}
+
+
+#multi-items #products #product-inner-box{
+    height: 100%;
+    flex-direction: column;
+    display: flex;
+    overflow: visible;
+    position: relative;
+    justify-content: flex-end;
+}
+
+#multi-items #products #product-inner-box-top-part{
+    flex-grow:1;
+    margin:0.5em;
+}
+#multi-items #products #image{
+    position:relative;
+}
+#multi-items #products #image img{
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto 1.25rem 1em;
+    width: 50%;
+    background-color: #f9f9f9;
+}
+
+#multi-items #products #product-inner-box #title{
+    text-align: left;
+    word-break: break-word;
+    margin-top: 0.9775rem;
+    margin-bottom: 2em;
+    max-height: 1.5rem;
+    overflow: hidden;
+}
+#filter-wrapper{
+    background-color:#e0e0e0;
+    border-radius: 12px;
+    display:flex;
+    flex-flow:row wrap;
+    align-items: baseline;
+    position:static;
+    width:50%;
+    margin:0.5em;
+}
+#filter-wrapper #top-part {
+    margin:0.5em;
+}
+
+#filter-wrapper #bottom-part{
+    width:100%;
+    display:flex;
+    margin:1em;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+}
