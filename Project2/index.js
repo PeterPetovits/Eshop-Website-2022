@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const {v4: uuidv4} = require('uuid');
 const app = express();
-const port = 8080;
+const port = 3000;
 
 const MongoClient = require('mongodb').MongoClient;
 
@@ -13,24 +13,23 @@ const uri = `mongodb+srv://${dbUserName}:${dbPassword}@cluster0.5a2u7mx.mongodb.
 
 const client = new MongoClient(uri, {useNewUrlParser: true, useUnifiedTopology: true});
 
-app.listen(port)
+app.listen(port);
 
 /* 
     Serve static content from directory "public",
     it will be accessible under path /, 
     e.g. http://localhost:8080/index.html
 */
-app.use(express.static('public'))
+app.use(express.static('public'));
 
 // parse url-encoded content from body
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: false }));
 
 // parse application/json content from body
-app.use(express.json())
+app.use(express.json());
 
 // serve index.html as content root
 app.get('/', function(req, res){
-
     var options = {
         root: path.join(__dirname, 'public')
     }
@@ -40,11 +39,9 @@ app.get('/', function(req, res){
     })
 })
 
-app.get('/login-service', function(req, res){
+app.get('/login-service', async function(req, res){
    let username = req.query.userName;
    let password = req.query.passWord;
-
-   console.log("login service ok")
 
    client
    .connect()
@@ -63,16 +60,16 @@ app.get('/login-service', function(req, res){
         return collection.find(query, options);
    })
    .then(cursor => cursor.toArray())
-   .then(user =>{
-        if(user.length == 1){
-            let jsonResponse = {"sessionId": uuidv4(), "statusCode": 200};
-            res.setHeader('Content-Type', 'application/json');
-            res.end(JSON.stringify(jsonResponse));
-        }else{
-            let jsonResponse = {"statusCode": 504};
-            res.setHeader('Content-Type', 'application/json');
-            res.end(jsonResponse);
-        }
+   .then(user => {
+    if(user.length == 1){
+        var jsonResponse = {"ResponseCode": 200, "sessionId" : uuidv4()};
+        res.setHeader('Content-Type', 'application/json');
+        res.status(200).json(jsonResponse);
+    }else{
+        var jsonResponse = {"ResponseCode": 500};
+        res.setHeader('Content-Type', 'application/json');
+        res.status(500).json(jsonResponse);
+    }
    })
    .catch(err =>{
         console.log(err);

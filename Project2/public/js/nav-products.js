@@ -12,8 +12,6 @@ window.onload=function(){
 
    var subcategories_id = document.getElementById("aside-subcategory-menu");
 
-   var login_form = document.getElementById("login-form");
-
    let myHeaders = new Headers();
    myHeaders.append('Accept', 'application/json');
 
@@ -73,29 +71,37 @@ window.onload=function(){
       }        
       
       printProductsPerUserChoise(smallData);
-   }   
+   } 
+}
 
-   login_form.onsubmit = function(){
-      let userName = document.getElementById("username").value;
-      let passWord = document.getElementById("password").value;
+function login(){
+   let userName = document.getElementById("username").value;
+   let passWord = document.getElementById("password").value;
 
-      let init = {
-         method: "GET",
-         headers: myHeaders
-      };
+   let myHeaders = new Headers();
+   myHeaders.append('Accept', '*/*');
+   myHeaders.append("Content-type", "application/json");
 
-      fetch("http://127.0.0.1:8080/login-service?userName=" + userName + "&passWord=" + passWord, init)
-      .then(function(response){
-         console.log("i am home")
-         return response.json();
-      })
-      .then(function(obj){
-         console.log(obj);
-      })
-      .catch(error=>{
-         console.log("an error occured",error);
-      })
-   }
+   let init = {
+      method: "GET",
+      headers: myHeaders
+   };
+
+   fetch("http://127.0.0.1:3000/login-service?userName=" + userName + "&passWord=" + passWord, init)
+   .then(function(response){
+      return response.json();
+   })
+   .then(function(result){
+      console.log(result);
+      if(result.ResponseCode == 200){
+         document.getElementById("login-result").innerHTML = "Login Successful";
+      }else{
+         document.getElementById("login-result").innerHTML = "Login Failed";
+      }
+   })
+   .catch(error=>{
+      console.log("an error occured", error);
+   })
 }
 
 function printProductsPerUserChoise(data){
