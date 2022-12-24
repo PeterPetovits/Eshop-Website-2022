@@ -1,7 +1,16 @@
-const express = require('express')
-const path = require('path')
-const app = express()
-const port = 8080
+const express = require('express');
+const path = require('path');
+const app = express();
+const port = 8080;
+
+const MongoClient = require('mongodb').MongoClient;
+
+const dbUserName = process.env.mongo_user;
+const dbPassword = process.env.mongo_pwd;
+
+const uri = `mongodb+srv://${dbUserName}:${dbPassword}@cluster0.5a2u7mx.mongodb.net/?retryWrites=true&w=majority`;
+
+const client = new MongoClient(uri, {useNewUrlParser: true, userUnifiedTopology: true});
 
 app.listen(port)
 
@@ -28,4 +37,27 @@ app.get('/', function(req, res){
     res.sendFile('index.html', options, function(err){
         console.log(err)
     })
+})
+
+app.get('/login-service', function(req, res){
+   let username = req.query.userName;
+   let password = req.query.passWord;
+
+   client
+   .connect()
+   .then(() =>{
+        const collection = client.db("eshop-db")
+        .collection("users");
+
+        console.log("connection ok")
+        //find query
+   })
+   .catch(err =>{
+        console.log(err);
+   })
+   .finally(() =>{
+        console.log("Closing connection")
+        client.close();
+   })
+   
 })

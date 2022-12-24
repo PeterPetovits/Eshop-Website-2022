@@ -12,6 +12,8 @@ window.onload=function(){
 
    var subcategories_id = document.getElementById("aside-subcategory-menu");
 
+   var login_form = document.getElementById("login-form");
+
    let myHeaders = new Headers();
    myHeaders.append('Accept', 'application/json');
 
@@ -72,6 +74,18 @@ window.onload=function(){
       
       printProductsPerUserChoise(smallData);
    }   
+
+   login_form.onsubmit = function(){
+      let userName = document.getElementById("username").value;
+      let passWord = document.getElementById("password").value;
+
+      let init = {
+         method: "GET",
+         headers: myHeaders
+      };
+
+      fetch("http://127.0.0.1:8080/login-service?userName=" + userName + "&passWord=" + passWord, init);
+   }
 }
 
 function printProductsPerUserChoise(data){
