@@ -84,7 +84,17 @@ window.onload=function(){
          headers: myHeaders
       };
 
-      fetch("http://127.0.0.1:8080/login-service?userName=" + userName + "&passWord=" + passWord, init);
+      fetch("http://127.0.0.1:8080/login-service?userName=" + userName + "&passWord=" + passWord, init)
+      .then(function(response){
+         console.log("i am home")
+         return response.json();
+      })
+      .then(function(obj){
+         console.log(obj);
+      })
+      .catch(error=>{
+         console.log("an error occured",error);
+      })
    }
 }
 
