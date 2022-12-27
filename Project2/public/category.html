@@ -29,6 +29,10 @@
                 <input type="password" id="password" name="password"><br>
                 <input type="button" value="Login" onclick="login()">
                 <p id="login-result"></p>
+                <p>Your cart has items: 
+                    <div id="cart-counter">0</div>
+                </p>
+                
             </aside>
         </main>
         <footer class="page-footer">
@@ -67,8 +71,10 @@
                                     <div id="image">
                                         <img src="{{this.image}}"><br>
                                     </div>
-                                
+                                    
                             </div>
+                            <input type="button" value="Add to Cart" onclick="addToCart('{{this.title}}', '{{this.cost}}', '{{this.image}}')">
+                            <div id="product-addition-{{this.title}}"></div>
                         </div>
                     </li>
                 {{/each}}

@@ -2,6 +2,9 @@ var userInputCategory;
 var compiledTemplate;
 var compiledTemplateAsideMenu;
 var productsCategory;
+var loggedIn = false;
+var globalUserName;
+var globalSessionId;
 
 window.onload=function(){
    let products_template = document.getElementById("products-template").innerHTML;
@@ -92,8 +95,10 @@ function login(){
       return response.json();
    })
    .then(function(result){
-      console.log(result);
       if(result.ResponseCode == 200){
+         loggedIn = true;
+         globalUserName = userName;
+         globalSessionId = result.sessionId;
          document.getElementById("login-result").innerHTML = "Login Successful";
       }else{
          document.getElementById("login-result").innerHTML = "Login Failed";
@@ -102,6 +107,8 @@ function login(){
    .catch(error=>{
       console.log("an error occured", error);
    })
+
+   setTimeout(countProducts, 2000);
 }
 
 function printProductsPerUserChoise(data){
@@ -114,4 +121,62 @@ function printSubcategoriesAsideMenu(data){
    let content = compiledTemplateAsideMenu(data);
    let div = document.getElementById("aside-subcategory-menu");
    div.innerHTML = content;
+}
+
+function addToCart(title, cost, image){
+   if(loggedIn == false){
+      window.alert("Please connect to add products in cart");
+   }else{
+      //check the user later 
+
+      let myHeaders = new Headers();
+      myHeaders.append('Accept', '*/*');
+      myHeaders.append("Content-type", "application/json");
+
+      let init = {
+         method: "POST",
+         headers: myHeaders
+      };
+
+      //fetch for service cart item addition
+      fetch("http://127.0.0.1:3000/cart-item-service?title=" + title + "&cost=" + cost + "&image=" + image + "&userName=" + globalUserName + "&sessionId=" + globalSessionId, init)
+      .then(function(response){
+         return response.json();
+      })
+      .then(function(result){
+         if(result.ResponseCode == 200){
+            document.getElementById("product-addition-" + title).innerHTML = "Item Added";
+         }
+      })
+      .catch(error=>{
+         console.log("an error occured", error);
+      })
+
+      setTimeout(countProducts, 1000);
+   }  
+}
+
+function countProducts(){
+   let myHeaders = new Headers();
+   myHeaders.append('Accept', '*/*');
+   myHeaders.append("Content-type", "application/json");
+
+   let init = {
+      method: "GET",
+      headers: myHeaders
+   };
+
+   //fetch for service cart size
+   fetch("http://127.0.0.1:3000/cart-size-service?userName=" + globalUserName + "&sessionId=" + globalSessionId, init)
+   .then(function(response){
+      return response.json();
+   })
+   .then(function(result){
+      if(result.ResponseCode == 200){
+         document.getElementById("cart-counter").innerHTML = result.size;
+      }
+   })
+   .catch(error=>{
+      console.log("an error occured", error);
+   })
 }

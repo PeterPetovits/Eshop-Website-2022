@@ -79,3 +79,65 @@ app.get('/login-service', async function(req, res){
         client.close();
    })
 })
+
+app.post('/cart-item-service', async function(req, res){
+    let title = req.query.title;
+    let cost = req.query.cost;
+    let image = req.query.image;
+    let username = req.query.userName;
+    let sessionId = req.query.sessionId;
+
+    client
+    .connect()
+    .then(() =>{
+        const collection = client.db("eshop-db").collection("cart");
+
+        item = {
+            productTitle: title,
+            productCost : cost,
+            productImage: image,
+            productUsername: username,
+            productSessionId: sessionId
+        }
+
+        return collection.insertOne(item);
+    })
+    .then(result =>{
+        var jsonResponse = {"ResponseCode": 200};
+        res.setHeader('Content-Type', 'application/json');
+        res.status(200).json(jsonResponse);
+    })
+    .catch(err => {
+        console.log(err);
+    })
+    .finally(() => {
+        console.log("Closing connection");
+        client.close();
+    })
+})
+
+app.get('/cart-size-service', async function(req, res){
+    let username = req.query.userName;
+    let sessionId = req.query.sessionId;
+
+    client
+    .connect()
+    .then(() =>{
+        const collection = client.db("eshop-db").collection("cart");
+
+        return collection.find({$or: [{productUsername: username}, {productSessionId: sessionId}]});
+    })
+    .then(cursor => cursor.toArray())
+    .then(result =>{
+        var jsonResponse = {"ResponseCode": 200, "size" : result.length};
+        res.setHeader('Content-Type', 'application/json');
+        res.status(200).json(jsonResponse);
+    })
+    .catch(err => {
+        console.log(err);
+    })
+    .finally(() => {
+        console.log("Closing connection");
+        client.close();
+    })
+})
