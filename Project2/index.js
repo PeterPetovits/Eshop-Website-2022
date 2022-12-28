@@ -90,23 +90,42 @@ app.post('/cart-item-service', async function(req, res){
     client
     .connect()
     .then(() =>{
-        const collection = client.db("eshop-db").collection("cart");
+        const collection = client.db("eshop-db").collection("allConnectedUsers");
 
-        item = {
-            productTitle: title,
-            productCost : cost,
-            productImage: image,
-            productUsername: username,
-            productSessionId: sessionId
+        let query = {"username": username, "currentSessionId": sessionId};
+        let options = {
+            sort: {username: 1},
+            projection: {
+                _id: 0, username: 1, currentSessionId: 1
+            }
         }
-
-        return collection.insertOne(item);
+        return collection.find(query, options);
     })
-    .then(result =>{
+    .then(cursor => cursor.toArray())
+    .then(user =>{
+        if(user.length == 1){
+            const collection = client.db("eshop-db").collection("cart");
+
+            item = {
+                productTitle: title,
+                productCost : cost,
+                productImage: image,
+                productUsername: username,
+                productSessionId: sessionId
+            }
+    
+            return collection.insertOne(item);
+        }else if(user.length == 0){
+            var jsonResponse = {"ResponseCode": 500};
+            res.setHeader('Content-Type', 'application/json');
+            res.status(500).json(jsonResponse);
+        }
+     })
+     .then(result =>{
         var jsonResponse = {"ResponseCode": 200};
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(jsonResponse);
-    })
+     })
     .catch(err => {
         console.log(err);
     })
@@ -158,18 +177,18 @@ app.post('/checkPreviousUsers', async function(req, res){
     })
     .then(cursor => cursor.toArray())
     .then(user =>{
-       if(user.length == 1){
-        const collection = client.db("eshop-db").collection("allConnectedUsers");
-        return collection.updateOne({"username": username}, {$set: {"currentSessionId": sessionId}});
-       }else if(user.length == 0){
+        if(user.length == 1){
+            const collection = client.db("eshop-db").collection("allConnectedUsers");
+            return collection.updateOne({"username": username}, {$set: {"currentSessionId": sessionId}});
+       
+        }else if(user.length == 0){
+            const collection = client.db("eshop-db").collection("allConnectedUsers");
+            user = {
+                username: username,
+                currentSessionId: sessionId
+            }
 
-        const collection = client.db("eshop-db").collection("allConnectedUsers");
-        user = {
-            username: username,
-            currentSessionId: sessionId
-        }
-
-        return collection.insertOne(user);
+            return collection.insertOne(user);
        }
     })
     .then(result =>{
@@ -197,9 +216,6 @@ app.get('/currentUserValidation', async function(req, res){
     .then(() =>{
         const collection = client.db("eshop-db").collection("allConnectedUsers");
 
-        console.log(username)
-        console.log(sessionId)
-
         let query = {"username": username, "currentSessionId": sessionId};
         let options = {
             sort: {username: 1},
@@ -207,17 +223,16 @@ app.get('/currentUserValidation', async function(req, res){
                 _id: 0, username: 1, currentSessionId: 1
             }
         }
+
         return collection.find(query, options);       
     })
     .then(cursor => cursor.toArray())
     .then(user => {
         if(user.length == 1){
-            console.log("user found in db")
             var jsonResponse = {"ResponseCode": 200};
             res.setHeader('Content-Type', 'application/json');
             res.status(200).json(jsonResponse);
         }else if(user.length == 0){
-            console.log("user not found in db")
             var jsonResponse = {"ResponseCode": 500};
             res.setHeader('Content-Type', 'application/json');
             res.status(500).json(jsonResponse);

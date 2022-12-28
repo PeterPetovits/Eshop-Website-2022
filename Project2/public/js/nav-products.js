@@ -129,23 +129,15 @@ function addToCart(title, cost, image){
    if(loggedIn == false){
       window.alert("Please connect to add products to cart");
    }else{
-      setTimeout(userValidation, 1000);
-      setTimeout(addToCartAfterValidation(title, cost, image), 10000);
-      setTimeout(countProducts, 5000);
-   }  
-}
+      let myHeaders = new Headers();
+      myHeaders.append('Accept', '*/*');
+      myHeaders.append("Content-type", "application/json");
 
-function addToCartAfterValidation(title, cost, image){
-   let myHeaders = new Headers();
-   myHeaders.append('Accept', '*/*');
-   myHeaders.append("Content-type", "application/json");
+      let init = {
+            method: "POST",
+            headers: myHeaders
+      };
 
-   let init = {
-         method: "POST",
-         headers: myHeaders
-   };
-   
-   if(userIsValidToAddInCart){
       //fetch for service cart item addition
       fetch("http://127.0.0.1:3000/cart-item-service?title=" + title + "&cost=" + cost + "&image=" + image + "&userName=" + globalUserName + "&sessionId=" + globalSessionId, init)
       .then(function(response){
@@ -159,10 +151,9 @@ function addToCartAfterValidation(title, cost, image){
       .catch(error=>{
          console.log("an error occured", error);
       })
-   }else{
-      console.log("inside add cart validation")
-      window.alert("Please connect to add products to cart");
-   }
+      
+      setTimeout(countProducts, 2000);
+   }  
 }
 
 function countProducts(){
@@ -190,6 +181,7 @@ function countProducts(){
    })
 }
 
+//temporary function that we might need
 function userValidation(){
    let myHeaders = new Headers();
    myHeaders.append('Accept', '*/*');
@@ -207,10 +199,8 @@ function userValidation(){
    })
    .then(function(result){
       if(result.ResponseCode == 200){
-         console.log("ok find user")
          userIsValidToAddInCart = true;
       }else{
-         console.log("user not found")
          userIsValidToAddInCart =  false;
       }
    })
