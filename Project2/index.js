@@ -141,3 +141,93 @@ app.get('/cart-size-service', async function(req, res){
         client.close();
     })
 })
+
+//here we check if a user has previously connected. If no we simply add him/her to the database.
+//If yes we update the sessionId for the previous session with the current one.
+app.post('/checkPreviousUsers', async function(req, res){
+    let username = req.query.userName;
+    let sessionId = req.query.sessionId;
+
+    client
+    .connect()
+    .then(() =>{
+        const collection = client.db("eshop-db").collection("allConnectedUsers");
+
+        let query = {username};
+        return collection.find(query);       
+    })
+    .then(cursor => cursor.toArray())
+    .then(user =>{
+       if(user.length == 1){
+        const collection = client.db("eshop-db").collection("allConnectedUsers");
+        return collection.updateOne({"username": username}, {$set: {"currentSessionId": sessionId}});
+       }else if(user.length == 0){
+
+        const collection = client.db("eshop-db").collection("allConnectedUsers");
+        user = {
+            username: username,
+            currentSessionId: sessionId
+        }
+
+        return collection.insertOne(user);
+       }
+    })
+    .then(result =>{
+        var jsonResponse = {"ResponseCode": 200};
+        res.setHeader('Content-Type', 'application/json');
+        res.status(200).json(jsonResponse);
+    })
+    .catch(err => {
+        console.log(err);
+    })
+    .finally(() => {
+        console.log("Closing connection");
+        client.close();
+    })
+})
+
+//here we check if the current user has the correct sessionId that matches the stored 
+//sessionId based on his/her username
+app.get('/currentUserValidation', async function(req, res){
+    let username = req.query.userName;
+    let sessionId = req.query.sessionId;
+
+    client
+    .connect()
+    .then(() =>{
+        const collection = client.db("eshop-db").collection("allConnectedUsers");
+
+        console.log(username)
+        console.log(sessionId)
+
+        let query = {"username": username, "currentSessionId": sessionId};
+        let options = {
+            sort: {username: 1},
+            projection: {
+                _id: 0, username: 1, currentSessionId: 1
+            }
+        }
+        return collection.find(query, options);       
+    })
+    .then(cursor => cursor.toArray())
+    .then(user => {
+        if(user.length == 1){
+            console.log("user found in db")
+            var jsonResponse = {"ResponseCode": 200};
+            res.setHeader('Content-Type', 'application/json');
+            res.status(200).json(jsonResponse);
+        }else if(user.length == 0){
+            console.log("user not found in db")
+            var jsonResponse = {"ResponseCode": 500};
+            res.setHeader('Content-Type', 'application/json');
+            res.status(500).json(jsonResponse);
+        }
+    })
+    .catch(err => {
+        console.log(err);
+    })
+    .finally(() => {
+        console.log("Closing connection");
+        client.close();
+    })
+})

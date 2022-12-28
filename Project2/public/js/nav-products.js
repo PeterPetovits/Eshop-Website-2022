@@ -5,6 +5,7 @@ var productsCategory;
 var loggedIn = false;
 var globalUserName;
 var globalSessionId;
+var userIsValidToAddInCart;
 
 window.onload=function(){
    let products_template = document.getElementById("products-template").innerHTML;
@@ -108,7 +109,8 @@ function login(){
       console.log("an error occured", error);
    })
 
-   setTimeout(countProducts, 2000);
+   setTimeout(checkPrevUsers, 2000);    //here we update/add the sessionId of the current session to database
+   setTimeout(countProducts, 4000);
 }
 
 function printProductsPerUserChoise(data){
@@ -125,19 +127,25 @@ function printSubcategoriesAsideMenu(data){
 
 function addToCart(title, cost, image){
    if(loggedIn == false){
-      window.alert("Please connect to add products in cart");
+      window.alert("Please connect to add products to cart");
    }else{
-      //check the user later 
+      setTimeout(userValidation, 1000);
+      setTimeout(addToCartAfterValidation(title, cost, image), 10000);
+      setTimeout(countProducts, 5000);
+   }  
+}
 
-      let myHeaders = new Headers();
-      myHeaders.append('Accept', '*/*');
-      myHeaders.append("Content-type", "application/json");
+function addToCartAfterValidation(title, cost, image){
+   let myHeaders = new Headers();
+   myHeaders.append('Accept', '*/*');
+   myHeaders.append("Content-type", "application/json");
 
-      let init = {
+   let init = {
          method: "POST",
          headers: myHeaders
-      };
-
+   };
+   
+   if(userIsValidToAddInCart){
       //fetch for service cart item addition
       fetch("http://127.0.0.1:3000/cart-item-service?title=" + title + "&cost=" + cost + "&image=" + image + "&userName=" + globalUserName + "&sessionId=" + globalSessionId, init)
       .then(function(response){
@@ -151,9 +159,10 @@ function addToCart(title, cost, image){
       .catch(error=>{
          console.log("an error occured", error);
       })
-
-      setTimeout(countProducts, 1000);
-   }  
+   }else{
+      console.log("inside add cart validation")
+      window.alert("Please connect to add products to cart");
+   }
 }
 
 function countProducts(){
@@ -179,4 +188,58 @@ function countProducts(){
    .catch(error=>{
       console.log("an error occured", error);
    })
+}
+
+function userValidation(){
+   let myHeaders = new Headers();
+   myHeaders.append('Accept', '*/*');
+   myHeaders.append("Content-type", "application/json");
+
+   let init = {
+      method: "GET",
+      headers: myHeaders
+   };
+
+   //check if a user was previously connected and add/update their sessionId for later use
+   fetch("http://127.0.0.1:3000/currentUserValidation?userName=" + globalUserName + "&sessionId=" + globalSessionId, init)
+   .then(function(response){
+      return response.json();
+   })
+   .then(function(result){
+      if(result.ResponseCode == 200){
+         console.log("ok find user")
+         userIsValidToAddInCart = true;
+      }else{
+         console.log("user not found")
+         userIsValidToAddInCart =  false;
+      }
+   })
+   .catch(error=>{
+      console.log("an error occured", error);
+   })
+}
+
+function checkPrevUsers(){
+   if(loggedIn){
+      let myHeaders = new Headers();
+      myHeaders.append('Accept', '*/*');
+      myHeaders.append("Content-type", "application/json");
+
+      let init = {
+         method: "POST",
+         headers: myHeaders
+      };
+
+      //check if a user was previously connected and add/update their sessionId for later use
+      fetch("http://127.0.0.1:3000/checkPreviousUsers?userName=" + globalUserName + "&sessionId=" + globalSessionId, init)
+      .then(function(response){
+         return response.json();
+      })
+      .then(function(result){
+         //nothin to return because we just update/add in this fetch
+      })
+      .catch(error=>{
+         console.log("an error occured", error);
+      })
+   }
 }
