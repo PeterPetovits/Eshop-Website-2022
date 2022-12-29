@@ -246,3 +246,75 @@ app.get('/currentUserValidation', async function(req, res){
         client.close();
     })
 })
+
+app.get('/cart-retrieval-service', async function(req, res){
+    let username = req.query.userName;
+    let sessionId = req.query.sessionId;
+
+    client
+    .connect()
+    .then(() =>{
+        const collection = client.db("eshop-db").collection("allConnectedUsers");
+
+        let query = {"username": username, "currentSessionId": sessionId};
+        let options = {
+            sort: {username: 1},
+            projection: {
+                _id: 0, username: 1, currentSessionId: 1
+            }
+        }
+        return collection.find(query, options);
+    })
+    .then(cursor => cursor.toArray())
+    .then(user =>{
+        if(user.length == 1){
+            const collection = client.db("eshop-db").collection("cart");
+
+            return collection.find({$or: [{productUsername: username}, {productSessionId: sessionId}]});
+        }else if(user.length == 0){
+            var jsonResponse = {"ResponseCode": 500};
+            res.setHeader('Content-Type', 'application/json');
+            res.status(500).json(jsonResponse);
+        }
+     })
+    .then(cursor => cursor.toArray())
+    .then(products =>{
+        var quantities = [];
+        var totalCost = 0;
+
+        for(let i = 0; i < products.length; i++){
+            counter = 0;
+            for(let j = 0; j < products.length; j++){
+                if(products[i].productTitle == products[j].productTitle){
+                    counter ++;
+                }
+            }
+            quantities.push({"title": products[i].productTitle, "cost": products[i].productCost , "quantity": counter});
+            totalCost += parseInt(products[i].productCost);
+        }
+
+        const unique = quantities.filter((obj, index) =>{
+            return index === quantities.findIndex(o => obj.title === o.title);
+        });
+
+        console.log(unique);
+
+
+        let finalCart = {"cartItems": unique, 
+                            "totalCost": totalCost };
+        return finalCart
+        
+    })
+    .then(result =>{
+        res.setHeader('Content-Type', 'application/json');
+        res.status(200).json(result);
+    })
+    .catch(err => {
+        console.log(err);
+    })
+    .finally(() => {
+        console.log("Closing connection");
+        client.close();
+    })
+
+})

@@ -233,3 +233,11 @@ function checkPrevUsers(){
       })
    }
 }
+
+function viewCart(){
+   if(loggedIn == true){
+      window.location.replace("cart.html?userName=" + globalUserName + "&sessionId=" + globalSessionId);
+   }else{
+      window.alert("Please connect to add products to cart");
+   }
+}

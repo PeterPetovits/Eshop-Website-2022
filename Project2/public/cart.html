@@ -37,7 +37,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
-    <script id="products-template" type="text/x-handlebars-template">
+    <script id="products-cart-template" type="text/x-handlebars-template">
         <table id="products">
             <thead>
                 <tr>
@@ -45,29 +45,28 @@
                 </tr>
             </thead>
             <tbody>
-                {#each this}}
+                {{#each cartItems}}
                     <tr>
                         <div id="products">
                             <div id="product-inner-box">
                                 <div id="product-inner-box-top-part">
                                     <div id="title">
-                                        {{this.title}}<br>
-                                    </div>
-                                    <div id="description">
-                                        {{this.description}}<br>
+                                        <p>{{title}}</p>
                                     </div>
                                     <div id="price">
-                                        <p>Price: {{this.cost}}.00 $</p>
+                                        <p>Price: {{cost}}.00 $</p>
                                     </div>
                                 </div>
                                     <div id="Quantity">
-                                        <p>Quantity: {{this.quantity}}</p>
+                                        <p>Quantity: {{quantity}}</p>
                                     </div>
                                     <!--An image as well perhaps-->
                                     
                             </div>
                     </tr>
                 {{/each}}
+
+                {{totalCost}}
 
             </tbody>
         </table>
