@@ -8,17 +8,25 @@
         <link rel="stylesheet" href="./css/style.css">
     </head>
     <body>
-        <header class="top-header">
-            <h1>The Wiki Eshop</h1>
-            <img class="logo" src="./assets/website-logo.png" alt="main website logo" height="100" width="100">
         
-        </header>
-        <main>
-            <aside id="aside-category-menu">
-                <div id="aside-subcategory-menu"></div>
-            </aside>
+        <main id="cart">
+            <header class="top-header">
+                <h1>The Wiki Eshop</h1>
+                <img class="logo" src="./assets/website-logo.png" alt="main website logo" height="100" width="100">
+        
+            </header>
+            <article id="cart-products">
+                <aside id="aside-category-menu">
+                    <div id="aside-subcategory-menu"></div>
+                </aside>
+        
+                <div id="multi-items"></div>
+                    
+                        
+                    
+                    
             
-            <div id="multi-items"></div>
+            </article>
         </main>
         <footer class="page-footer">
             <ul class="row-footer">
@@ -38,38 +46,58 @@
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
     <script id="products-cart-template" type="text/x-handlebars-template">
-        <table id="products">
+        
+        <table id="products-cart-presentation">
+            <!--
+
             <thead>
                 <tr>
                     <th>My items</th>
-                </tr>
+                </tr>            
             </thead>
+
+            -->
+            
             <tbody>
+                
                 {{#each cartItems}}
                     <tr>
-                        <div id="products">
-                            <div id="product-inner-box">
-                                <div id="product-inner-box-top-part">
-                                    <div id="title">
-                                        <p>{{title}}</p>
+                            
+                            <div id="products">
+                                <div id="product-inner-box">
+                                    <div id="product-inner-box-top-part">
+                                        
+                                        <div id="title">
+                                            <p>{{title}}</p>
+                                        </div>
+
+                                        
+                                        <div id="price">
+                                            <p>Price: {{cost}}.00 $</p>
+                                        </div>
+
                                     </div>
-                                    <div id="price">
-                                        <p>Price: {{cost}}.00 $</p>
-                                    </div>
-                                </div>
+                                    
                                     <div id="Quantity">
                                         <p>Quantity: {{quantity}}</p>
                                     </div>
-                                    <!--An image as well perhaps-->
                                     
-                            </div>
+                                                <!--An image as well perhaps-->
+                                                
+                                </div>
+                            </div>  
+                    
+                        
+                    
                     </tr>
                 {{/each}}
-
-                {{totalCost}}
-
+                <tr>
+                    <div id="total-cost">
+                        <p>Total Cost: {{totalCost}}.00$</p>
+                    </div>
+                </tr>    
             </tbody>
-        </table>
+        </table>     
 
 
     </script>

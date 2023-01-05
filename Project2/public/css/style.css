@@ -12,25 +12,30 @@ body{
     font-weight: 700;
     
 }
-p{
+h3{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 }
-main{
+#product-categories,#products-menu,#cart{
     max-width:100%;
     min-width: auto;
     margin:0;
     padding:0;
     padding:0;
     position:relative;
+    grid-column:1;
+    grid-row:1;
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(350px,auto);
 }
 
 *:before,*:after{
     box-sizing: border-box;
 }
 .top-header{
-    grid-column: 1 / 4;
-    grid-row: 1 / 2;
+    grid-column: 1;
+    grid-row: 1;
     background-image: url(../assets/background_image_4.jpg);      /* top-header with background image*/
     text-align: center;
 }
@@ -57,8 +62,8 @@ main{
     flex-direction: column;
     -ms-flex-align: center;
     align-items: center;
-    grid-column: 1 / 4;
-    grid-row: 3 / 4;
+    grid-column: 1;
+    grid-row: 2;
 }
 
 .row-footer{
@@ -87,11 +92,19 @@ main{
 }
 
 
+/*for categories presentation*/
 
-#multi-items{
+
+#products-menu #multi-items{
     display: grid;
     margin: 0.3125rem;
     grid-template-columns: 1fr;
+    grid-auto-rows: minmax(50px, auto);
+}
+#product-categories #multi-items{
+    display: grid;
+    margin: 0.3125rem;
+    grid-template-columns: 0.5fr;
     grid-auto-rows: minmax(50px, auto);
 }
 
@@ -133,7 +146,7 @@ main{
     position: relative;
     overflow: hidden;
     margin: 0 auto 1.25rem 1em;
-    width: 50%;
+    width: 30%;
     background-color: #f9f9f9;
 }
 
@@ -147,7 +160,12 @@ main{
     margin-left: 1em;
 }
 
-
+/*For products presentantion*/
+#products-menu-inner-box{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-auto-rows: minmax(350px,auto);
+}
 #multi-items #products #product-inner-box{
     height: 100%;
     flex-direction: column;
@@ -176,12 +194,57 @@ main{
     text-align: left;
     word-break: break-word;
     margin-top: 0.9775rem;
-    margin-bottom: 2em;
-    max-height: 1.5rem;
+    margin-bottom: 0.9775rem;
+    max-height: 2.5rem;
     overflow: hidden;
 }
+#multi-items #products #product-inner-box #submit-button #button-submit,#login-btn{
+    width: 25% !important;
+    margin: 2em;
+    padding: 2em;
+    background: #360a9b;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 25px;
+    cursor: pointer;
+    padding:1em;
+    transition-duration: 0.3s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+#multi-items #products #product-inner-box #submit-button #button-submit:hover,#multi-items #products #product-inner-box #submit-button #button-submit:focus,#login-btn:hover,#login-btn:focus{
+    background-color: rgb(228, 215, 215);
+    box-shadow:  0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    color: black;
+}
+input{
+    border: 1px solid #ccc;
+    font-weight: 700;
+    border-radius: 12px;
+    box-sizing: border-box;
+    font-size: 13px;
+}
+#input:focus{
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid #7109c6;
+    outline-width: 0;
+    transition: All 0.5s ease-in;
+    -webkit-transition: All 0.5s ease-in;
+    -moz-transition: All 0.5s ease-in;
+    -o-transition: All 0.5s ease-in;
+}
+#aside-category-menu #aside-subcategory-menu{
+    position:static;
+    width:100%;
+    margin-bottom:0;
+}
 #filter-wrapper{
-    background-color:#e0e0e0;
     border-radius: 12px;
     display:flex;
     flex-flow:row wrap;
@@ -192,13 +255,129 @@ main{
 }
 #filter-wrapper #top-part {
     margin:0.5em;
+    color: #363636;
+    display:block;
+}
+#filter-wrapper #top-part h3{
+    line-height:1.35;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 400;
+
 }
 
 #filter-wrapper #bottom-part{
     width:100%;
+}
+
+#filter-wrapper #bottom-part #filter-list{
+    text-align: center;
+    margin-bottom: 2rem;
     display:flex;
-    margin:1em;
-    flex-flow: row wrap;
+    flex-flow:column wrap;
     align-items: center;
-    justify-content: space-between;
+    gap:5px;
+}
+
+
+#filter-wrapper #bottom-part #filter-list *{
+    display: inline-block;
+
+}
+#filter-wrapper #bottom-part #filter-list li label{
+    padding-left: 35px;
+    margin-bottom: 12px;
+    font-size: 15px;
+    line-height: normal;
+    cursor: pointer;
+    transition: all 0.1s;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: relative;
+    display:block;
+}
+#filter-wrapper #bottom-part #filter-list li label input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+#filter-wrapper #bottom-part #filter-list li label:hover input ~ .checkmark{
+    background-color: #ccc;
+  
+}
+#filter-wrapper #bottom-part #filter-list li label .checkmark{
+    position:absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+#filter-wrapper #bottom-part #filter-list li label input:checked ~ .checkmark {
+    background-color: orange
+}
+#filter-wrapper #bottom-part #filter-list li label .checkmark:after{
+    content: "";
+    position: absolute;
+    display: none;
+}
+#filter-wrapper #bottom-part #filter-list li label input:checked ~ .checkmark:after{
+    display:block;
+}
+#filter-wrapper #bottom-part #filter-list li label .checkmark:after{
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+#login-form{
+    max-width:80%;
+    display:block;
+}
+#login-form #login{
+    margin:0 auto;
+    overflow:hidden;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    display:flex;
+    flex-flow: column wrap;
+    align-items: center;
+    text-align: center;
+}
+#login-form #login #logo-container-title{
+    padding: 25px;
+    background: rgb(9, 6, 233);
+    text-align: center;
+    font-size:x-large;
+    width:100%;
+}
+#login-form #login #logo-container-title h1{
+    color:white;
+    font-family: cursive;
+}
+#login-form #login input,#login-form #login label{
+    padding:0.5em;
+    margin:1em;
+    width:50%;
+}
+#login-form #cart-logo,#login-form #head-to-cart{
+    margin:1em;
+
+}
+#cart #multi-items #products #product-inner-box #Quantity{
+    margin:1.05em;
+}
+#cart #multi-items #products #product-inner-box #product-inner-box-top-part #price{
+    margin:1em;
 }

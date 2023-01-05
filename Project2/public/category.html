@@ -9,33 +9,46 @@
     </head>
     <body>
 
-        <header class="top-header">
-            <h1>The Wiki Eshop</h1>
-            <img class="logo" src="./assets/website-logo.png" alt="main website logo" height="100" width="100">
         
-        </header>
 
-        <main>
-            <aside id="aside-category-menu">
-                <div id="aside-subcategory-menu"></div>
-            </aside>
-            
-            <div id="multi-items"></div>
-
-            <aside id="login-form">
-                <label for="username">username:</label>
-                <input type="text" id="username" name="username"><br>
-                <label for="password">password:</label>
-                <input type="password" id="password" name="password"><br>
-                <input type="button" value="Login" onclick="login()">
-                <p id="login-result"></p>
-                <p>Your cart has items: 
-                    <div id="cart-counter">0</div>
-                </p>
+        <main id="products-menu">
+            <header class="top-header">
+                <h1>The Wiki Eshop</h1>
+                <img class="logo" src="./assets/website-logo.png" alt="main website logo" height="100" width="100">
+        
+            </header>
+            <article id="products-menu-inner-box">
+                <aside id="aside-category-menu">
+                    <div id="aside-subcategory-menu"></div>
+                </aside>
                 
-            </aside>
+                <div id="multi-items"></div>
 
-            <input type="button" value="Cart" onclick="viewCart()">
+                <aside id="login-form">
+                    <form id="login">
+                        <div id="logo-container-title">
+                            <h1>Login to your account</h1> 
+                        </div>
+                        <label for="username">username</label>
+                        <input type="text" id="username" name="username"><br>
+                        <label for="password">password</label>
+                        <input type="password" id="password" name="password"><br>
+                        
+                        <input type="button" id="login-btn" value="Login" onclick="login()">
+                        
+                        <p id="login-result"></p>
+                        <p>Your cart has items: 
+                            <div id="cart-counter">0</div>
+                        </p>
+                    </form>
+                    <div id="cart-logo">
+                        <a href="/cart.html" title="Your cart" aria-label="Your cart" onclick="viewCart()"><img src="../public/assets/shopping-cart.png" alt="cart-icon" height="30" width="30"></a>
+                    </div>
+                    <input type="button" id="head-to-cart" value="View your Cart" onclick="viewCart()">
+                    
+                </aside>
+            </article>
+            
         </main>
         <footer class="page-footer">
             <ul class="row-footer">
@@ -73,9 +86,11 @@
                                     <div id="image">
                                         <img src="{{this.image}}"><br>
                                     </div>
-                                    
+                                <div id="submit-button">
+                                    <input type="button" id="button-submit" value="Add to Cart" onclick="addToCart('{{this.title}}', '{{this.cost}}', '{{this.image}}')">
+                                </div>
                             </div>
-                            <input type="button" value="Add to Cart" onclick="addToCart('{{this.title}}', '{{this.cost}}', '{{this.image}}')">
+                            
                             <div id="product-addition-{{this.title}}"></div>
                         </div>
                     </li>
@@ -86,17 +101,31 @@
         <script id="subcategories-aside-menu" type="text/x-handlebars-template">
             <div id="filter-wrapper">
                 <div id="top-part">
-                    <p>Πατήστε το σύνδεσμο για φιλτράρισμα των προϊόντων ανάλογα με την 
+                    <h3>Πατήστε το σύνδεσμο για φιλτράρισμα των προϊόντων ανάλογα με την 
                         υπο-κατηγορία τους.
-                    </p>
+                        
+                    </h3>
                 </div>
                 <div id="bottom-part">
-                    <label for="all"><p>Όλα</p></label>
-                    <input type="radio" id="all" name="categories-titles" value="Όλα" data-category-id="all" checked><br>
-                    {{#each this}}
-                        <label for="{{this.id}}">{{this.title}}</label>
-                        <input type="radio" id="{{this.id}}" name="categories-titles" value="{{this.title}}" data-category-id="{{this.id}}"><br>
-                    {{/each}}
+                    <ul id="filter-list">
+                        <li>
+                            <label for="all">Όλα
+                                <input type="radio" id="all" name="categories-titles" value="Όλα" data-category-id="all" checked>
+                                <span class="checkmark"></span>
+                            </label>
+                        </li>
+                    
+                        
+                        {{#each this}}
+                                <li>
+                                    <label for="{{this.id}}">{{this.title}}
+                                        <input type="radio" id="{{this.id}}" name="categories-titles" value="{{this.title}}" data-category-id="{{this.id}}">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </li>
+                        {{/each}}
+                        
+                    </ul>
                 </div>
             </div>
         </script>
