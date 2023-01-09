@@ -40,6 +40,7 @@ app.get('/', function(req, res){
 })
 
 app.get('/login-service', async function(req, res){
+    console.log("login service activated")
    let username = req.query.userName;
    let password = req.query.passWord;
 
@@ -81,6 +82,7 @@ app.get('/login-service', async function(req, res){
 })
 
 app.post('/cart-item-service', async function(req, res){
+    console.log("cart item service activated")
     let title = req.query.title;
     let cost = req.query.cost;
     let image = req.query.image;
@@ -136,6 +138,7 @@ app.post('/cart-item-service', async function(req, res){
 })
 
 app.get('/cart-size-service', async function(req, res){
+    console.log("cart size service activated")
     let username = req.query.userName;
     let sessionId = req.query.sessionId;
 
@@ -164,6 +167,7 @@ app.get('/cart-size-service', async function(req, res){
 //here we check if a user has previously connected. If no we simply add him/her to the database.
 //If yes we update the sessionId for the previous session with the current one.
 app.post('/checkPreviousUsers', async function(req, res){
+    console.log("check Previous users service activated")
     let username = req.query.userName;
     let sessionId = req.query.sessionId;
 
@@ -208,6 +212,7 @@ app.post('/checkPreviousUsers', async function(req, res){
 //here we check if the current user has the correct sessionId that matches the stored 
 //sessionId based on his/her username
 app.get('/currentUserValidation', async function(req, res){
+    console.log("current user validation service activated")
     let username = req.query.userName;
     let sessionId = req.query.sessionId;
 
@@ -248,6 +253,7 @@ app.get('/currentUserValidation', async function(req, res){
 })
 
 app.get('/cart-retrieval-service', async function(req, res){
+    console.log("cart retrieval service activated")
     let username = req.query.userName;
     let sessionId = req.query.sessionId;
 
@@ -297,13 +303,10 @@ app.get('/cart-retrieval-service', async function(req, res){
             return index === quantities.findIndex(o => obj.title === o.title);
         });
 
-        console.log(unique);
-
-
         let finalCart = {"cartItems": unique, 
                             "totalCost": totalCost };
+                            
         return finalCart
-        
     })
     .then(result =>{
         res.setHeader('Content-Type', 'application/json');
@@ -316,5 +319,4 @@ app.get('/cart-retrieval-service', async function(req, res){
         console.log("Closing connection");
         client.close();
     })
-
 })

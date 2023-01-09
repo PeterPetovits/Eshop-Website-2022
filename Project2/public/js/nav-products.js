@@ -78,7 +78,7 @@ window.onload=function(){
    } 
 }
 
-function login(){
+async function login(){
    let userName = document.getElementById("username").value;
    let passWord = document.getElementById("password").value;
 
@@ -91,7 +91,7 @@ function login(){
       headers: myHeaders
    };
 
-   fetch("http://127.0.0.1:3000/login-service?userName=" + userName + "&passWord=" + passWord, init)
+   await fetch("http://127.0.0.1:3000/login-service?userName=" + userName + "&passWord=" + passWord, init)
    .then(function(response){
       return response.json();
    })
@@ -108,9 +108,9 @@ function login(){
    .catch(error=>{
       console.log("an error occured", error);
    })
-
-   setTimeout(checkPrevUsers, 2000);    //here we update/add the sessionId of the current session to database
-   setTimeout(countProducts, 4000);
+  
+   await checkPrevUsers();    //here we update/add the sessionId of the current session to database
+   await countProducts();
 }
 
 function printProductsPerUserChoise(data){
@@ -125,7 +125,7 @@ function printSubcategoriesAsideMenu(data){
    div.innerHTML = content;
 }
 
-function addToCart(title, cost, image){
+async function addToCart(title, cost, image){
    if(loggedIn == false){
       window.alert("Please connect to add products to cart");
    }else{
@@ -139,7 +139,7 @@ function addToCart(title, cost, image){
       };
 
       //fetch for service cart item addition
-      fetch("http://127.0.0.1:3000/cart-item-service?title=" + title + "&cost=" + cost + "&image=" + image + "&userName=" + globalUserName + "&sessionId=" + globalSessionId, init)
+      await fetch("http://127.0.0.1:3000/cart-item-service?title=" + title + "&cost=" + cost + "&image=" + image + "&userName=" + globalUserName + "&sessionId=" + globalSessionId, init)
       .then(function(response){
          return response.json();
       })
@@ -152,11 +152,11 @@ function addToCart(title, cost, image){
          console.log("an error occured", error);
       })
       
-      setTimeout(countProducts, 2000);
+      await countProducts();
    }  
 }
 
-function countProducts(){
+async function countProducts(){
    let myHeaders = new Headers();
    myHeaders.append('Accept', '*/*');
    myHeaders.append("Content-type", "application/json");
@@ -167,7 +167,7 @@ function countProducts(){
    };
 
    //fetch for service cart size
-   fetch("http://127.0.0.1:3000/cart-size-service?userName=" + globalUserName + "&sessionId=" + globalSessionId, init)
+   await fetch("http://127.0.0.1:3000/cart-size-service?userName=" + globalUserName + "&sessionId=" + globalSessionId, init)
    .then(function(response){
       return response.json();
    })
@@ -209,7 +209,7 @@ function userValidation(){
    })
 }
 
-function checkPrevUsers(){
+async function checkPrevUsers(){
    if(loggedIn){
       let myHeaders = new Headers();
       myHeaders.append('Accept', '*/*');
@@ -221,7 +221,7 @@ function checkPrevUsers(){
       };
 
       //check if a user was previously connected and add/update their sessionId for later use
-      fetch("http://127.0.0.1:3000/checkPreviousUsers?userName=" + globalUserName + "&sessionId=" + globalSessionId, init)
+      await fetch("http://127.0.0.1:3000/checkPreviousUsers?userName=" + globalUserName + "&sessionId=" + globalSessionId, init)
       .then(function(response){
          return response.json();
       })
