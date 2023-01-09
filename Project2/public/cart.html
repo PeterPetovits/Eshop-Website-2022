@@ -48,22 +48,18 @@
     <script id="products-cart-template" type="text/x-handlebars-template">
         
         <table id="products-cart-presentation">
-            <!--
-
-            <thead>
-                <tr>
-                    <th>My items</th>
-                </tr>            
-            </thead>
-
-            -->
+            
             
             <tbody>
-                
+                <div id="table-header">
+                    <p>My Items</p>
+                </div>
                 {{#each cartItems}}
                     <tr>
+                        
                             
                             <div id="products">
+                                
                                 <div id="product-inner-box">
                                     <div id="product-inner-box-top-part">
                                         
